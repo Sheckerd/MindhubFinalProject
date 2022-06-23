@@ -23,13 +23,14 @@ public class Client {
 
     public Client(){}
 
-    public Client(Long id, String name, String lastName, String email, String password, String cellPhone) {
-        this.id = id;
+    public Client(String name, String lastName, String email, String password, String cellPhone) {
+
         this.name = name;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.cellPhone = cellPhone;
+
     };
 
     public Long getId() {

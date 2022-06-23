@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.net.URL;
 
 @Entity
 public class Product {
@@ -16,34 +17,50 @@ public class Product {
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
 
-    private double price;
-    private String description;
     private String name;
-    private int stock;
-    private String imageURL;
     private String color;
+    private String description;
+    private String imageURL_front;
+    private String imageURL_back;
     private String animeTheme;
-    private String clothesType;
+    private ClothesType clothesType;
     private boolean limitedEdition;
     private ProductType productType;
     private ClothesSize clothesSize;
+    private int stock;
+    private double price;
 
-    public Product() {
-    }
+    public Product() {};
 
 
-    public Product(double price, String description, String name, int stock, String image, String color, String animeTheme, String clothesType, boolean limitedEdition, ProductType productType, ClothesSize clothesSize) {
-        this.price = price;
-        this.description = description;
+    public Product(String name, String color, String description, String imageURL_front, String imageURL_back, String animeTheme, ClothesType clothesType, boolean limitedEdition, ProductType productType, ClothesSize clothesSize, int stock, double price) {
+
         this.name = name;
-        this.stock = stock;
-        this.imageURL = image;
         this.color = color;
+        this.description = description;
+        this.imageURL_front = imageURL_front;
+        this.imageURL_back = imageURL_back;
         this.animeTheme = animeTheme;
         this.clothesType = clothesType;
         this.limitedEdition = limitedEdition;
         this.productType = productType;
         this.clothesSize = clothesSize;
+        this.stock = stock;
+        this.price = price;
+
+    }
+    public Product(String name, String description, String imageURL_front, String animeTheme, boolean limitedEdition, ProductType productType, ClothesSize clothesSize, int stock, double price) {
+
+        this.name = name;
+        this.description = description;
+        this.imageURL_front = imageURL_front;
+        this.animeTheme = animeTheme;
+        this.limitedEdition = limitedEdition;
+        this.productType = productType;
+        this.clothesSize = clothesSize;
+        this.stock = stock;
+        this.price = price;
+
     }
 
     public long getId() {
@@ -53,7 +70,6 @@ public class Product {
     public double getPrice() {
         return price;
     }
-
     public void setPrice(double price) {
         this.price = price;
     }
@@ -61,7 +77,6 @@ public class Product {
     public String getDescription() {
         return description;
     }
-
     public void setDescription(String description) {
         this.description = description;
     }
@@ -69,7 +84,6 @@ public class Product {
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -77,23 +91,19 @@ public class Product {
     public int getStock() {
         return stock;
     }
-
     public void setStock(int stock) {
         this.stock = stock;
     }
 
-    public String getImageURL() {
-        return imageURL;
-    }
+    public String getImageURL_front() {return imageURL_front;}
+    public void setImageURL_front(String imageURL_front) {this.imageURL_front = imageURL_front;}
 
-    public void setImageURL(String imageURL) {
-        this.imageURL = imageURL;
-    }
+    public String getImageURL_back() {return imageURL_back;}
+    public void setImageURL_back(String imageURL_back) {this.imageURL_back = imageURL_back;}
 
     public String getColor() {
         return color;
     }
-
     public void setColor(String color) {
         this.color = color;
     }
@@ -101,23 +111,20 @@ public class Product {
     public String getAnimeTheme() {
         return animeTheme;
     }
-
     public void setAnimeTheme(String animeTheme) {
         this.animeTheme = animeTheme;
     }
 
-    public String getClothesType() {
+    public ClothesType getClothesType() {
         return clothesType;
     }
-
-    public void setClothesType(String clothesType) {
+    public void setClothesType(ClothesType clothesType) {
         this.clothesType = clothesType;
     }
 
     public boolean isLimitedEdition() {
         return limitedEdition;
     }
-
     public void setLimitedEdition(boolean limitedEdition) {
         this.limitedEdition = limitedEdition;
     }
@@ -125,7 +132,6 @@ public class Product {
     public ProductType getProductType() {
         return productType;
     }
-
     public void setProductType(ProductType productType) {
         this.productType = productType;
     }
@@ -133,7 +139,6 @@ public class Product {
     public ClothesSize getClothesSize() {
         return clothesSize;
     }
-
     public void setClothesSize(ClothesSize clothesSize) {
         this.clothesSize = clothesSize;
     }

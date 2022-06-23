@@ -1,14 +1,13 @@
 package com.PatitosdeHule.eCommerce.services.implement;
 
 
-import com.PatitosdeHule.eCommerce.DTOs.ProductDTO;
+import com.PatitosdeHule.eCommerce.DTOs.ClothesDTO;
 import com.PatitosdeHule.eCommerce.models.Product;
 import com.PatitosdeHule.eCommerce.repositories.ProductRepository;
 import com.PatitosdeHule.eCommerce.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -24,8 +23,8 @@ public class ProductServiceImplement implements ProductService {
     }
 
     @Override
-    public Set<ProductDTO> getProductsDTO() {
-        return productRepository.findAll().stream().map(product -> new ProductDTO(product)).collect(Collectors.toSet());
+    public Set<ClothesDTO> getProductsDTO() {
+        return productRepository.findAll().stream().map(product -> new ClothesDTO(product)).collect(Collectors.toSet());
     }
 
 

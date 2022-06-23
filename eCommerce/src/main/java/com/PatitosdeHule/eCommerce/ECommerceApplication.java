@@ -1,5 +1,6 @@
 package com.PatitosdeHule.eCommerce;
 
+import com.PatitosdeHule.eCommerce.models.Client;
 import com.PatitosdeHule.eCommerce.models.ClothesSize;
 import com.PatitosdeHule.eCommerce.models.Product;
 import com.PatitosdeHule.eCommerce.models.ProductType;
@@ -27,7 +28,8 @@ public class ECommerceApplication {
 		Product productNaruto = new Product(400d, "traje naruto", "naruto set", 20, "https://i.ebayimg.com/thumbs/images/g/i0gAAOSwKpph3OLh/s-l300.jpg", "orange", "naruto theme", "traje", true, ProductType.COSPLAY, ClothesSize.M);
 		productService.saveProduct(productNaruto);
 
-
+		Client admin = new Client ("Admin", "admin", "admin@orgm.com", "soyadmin", "2996827417");
+		Client client = new Client ("Melbita", "Morel", "melba@mindhub.com", "melba2.0", "2993910932");
 
 	};
 	}

@@ -21,6 +21,7 @@ public class CosplayDTO {
 
     public CosplayDTO(Product product) {
 
+        this.id = product.getId();
         this.name = product.getName();
         this.description = product.getDescription();
         this.imageURL_front = product.getImageURL_front();

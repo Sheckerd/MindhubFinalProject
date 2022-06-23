@@ -22,6 +22,10 @@ public class ECommerceApplication {
 	public CommandLineRunner init(ProductService productService, ClientService clientService){
 	return args -> {
 
+
+
+
+
 		Product cosplayNaruto = new Product("naruto set", "traje naruto", "https://i.ebayimg.com/thumbs/images/g/i0gAAOSwKpph3OLh/s-l300.jpg", "naruto theme", true, ProductType.COSPLAY, ClothesSize.M,20,400d);
 		Product clotheBNHA = new Product("Remera Izuki", "verde/c negro", "Una remera muito delicia mmmmmm", "https://d3ugyf2ht6aenh.cloudfront.net/stores/830/660/products/zt-0686-frente-9744de8f9c1d9597e116038240713155-1024-1024.jpg", "https://d3ugyf2ht6aenh.cloudfront.net/stores/830/660/products/zt-0686-frente-9744de8f9c1d9597e116038240713155-1024-1024.jpg", "BNHA", ClothesType.T_SHIRT, false, ProductType.CLOTHES, ClothesSize.S, 17, 250);
 		productService.saveProduct(cosplayNaruto);

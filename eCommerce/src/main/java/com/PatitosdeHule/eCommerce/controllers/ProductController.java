@@ -2,6 +2,7 @@ package com.PatitosdeHule.eCommerce.controllers;
 
 
 import com.PatitosdeHule.eCommerce.DTOs.ClothesDTO;
+import com.PatitosdeHule.eCommerce.DTOs.CosplayDTO;
 import com.PatitosdeHule.eCommerce.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,10 +18,14 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+   @GetMapping("/products/clothes")
+    public Set<ClothesDTO> getClothesDTOs(){
+       return productService.getClothesDTO();
+   }
 
-    @GetMapping("/products")
-    public Set<ClothesDTO> getProductDTOs(){
-        return productService.getProductsDTO();
+    @GetMapping("/products/cosplay")
+    public Set<CosplayDTO> getCosplayDTOs(){
+        return productService.getCosplayDTO();
     }
 
 

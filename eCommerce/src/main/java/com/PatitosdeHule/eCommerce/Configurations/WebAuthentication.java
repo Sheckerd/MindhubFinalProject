@@ -3,6 +3,7 @@ package com.PatitosdeHule.eCommerce.Configurations;
 
 import com.PatitosdeHule.eCommerce.models.Client;
 import com.PatitosdeHule.eCommerce.repositories.ClientRepository;
+import com.PatitosdeHule.eCommerce.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,14 +19,14 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class WebAuthentication extends GlobalAuthenticationConfigurerAdapter {
 
     @Autowired
-    ClientRepository clientRepository;
+    private ClientService clientService;
 
     @Override
     public void init(AuthenticationManagerBuilder auth) throws Exception {
 
-        auth.userDetailsService(inputName-> {
+        auth.userDetailsService(email-> {
 
-            Client client = clientRepository.findByEmail(inputName);
+            Client client = clientService.getClientByEmail(email);
 
             if (client != null) {
 
@@ -44,7 +45,7 @@ public class WebAuthentication extends GlobalAuthenticationConfigurerAdapter {
 
             } else {
 
-                throw new UsernameNotFoundException("Unknown user: " + inputName);
+                throw new UsernameNotFoundException("Unknown user: " + email);
 
             }
         });

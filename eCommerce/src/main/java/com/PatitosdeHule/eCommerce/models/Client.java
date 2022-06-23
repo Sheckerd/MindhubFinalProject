@@ -10,10 +10,10 @@ import javax.persistence.Id;
 public class Client {
 
 
- @Id
- @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
- @GenericGenerator(name = "native", strategy = "native")
-  private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+    @GenericGenerator(name = "native", strategy = "native")
+    private long id;
 
     private String name;
     private String lastName;
@@ -33,7 +33,7 @@ public class Client {
 
     };
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 

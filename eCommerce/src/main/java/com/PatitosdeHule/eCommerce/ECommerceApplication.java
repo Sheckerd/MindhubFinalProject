@@ -3,11 +3,12 @@ package com.PatitosdeHule.eCommerce;
 import com.PatitosdeHule.eCommerce.models.*;
 import com.PatitosdeHule.eCommerce.services.ClientService;
 import com.PatitosdeHule.eCommerce.services.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 
 @SpringBootApplication
@@ -18,6 +19,9 @@ public class ECommerceApplication {
 		System.out.println("Juegue Caballero!");
 	}
 
+	@Autowired
+	PasswordEncoder passwordEncoder;
+
 	@Bean
 	public CommandLineRunner init(ProductService productService, ClientService clientService){
 	return args -> {
@@ -27,8 +31,8 @@ public class ECommerceApplication {
 		productService.saveProduct(cosplayNaruto);
 		productService.saveProduct(clotheBNHA);
 
-		Client admin = new Client ("Admin", "admin", "admin@orgm.com", "soyadmin", "2996827417");
-		Client client = new Client ("Melbita", "Morel", "melba@mindhub.com", "melba2.0", "2993910932");
+		Client admin = new Client ("Admin", "admin", "admin@orgm.com", passwordEncoder.encode("soyadmin"), "2996827417");
+		Client client = new Client ("Melbita", "Morel", "melba@mindhub.com", passwordEncoder.encode("melba"), "2993910932");
 		clientService.saveClient(admin);
 		clientService.saveClient(client);
 

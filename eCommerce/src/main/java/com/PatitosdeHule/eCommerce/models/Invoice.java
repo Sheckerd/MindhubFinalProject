@@ -14,12 +14,12 @@ public class Invoice {
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
 
-    private Client client;
     private PaymentMethods paymentMethods;
     private ShippingType shippingType;
     private String invoice_number;
     private double total_value;
     private LocalDateTime date;
+    private Client client;
 
     public Invoice() {};
 

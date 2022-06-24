@@ -3,6 +3,7 @@ package com.PatitosdeHule.eCommerce.controllers;
 
 import com.PatitosdeHule.eCommerce.DTOs.ClothesDTO;
 import com.PatitosdeHule.eCommerce.DTOs.CosplayDTO;
+import com.PatitosdeHule.eCommerce.DTOs.ProductDTO;
 import com.PatitosdeHule.eCommerce.models.Client;
 import com.PatitosdeHule.eCommerce.models.ClothesSize;
 import com.PatitosdeHule.eCommerce.models.Product;
@@ -27,6 +28,11 @@ public class ProductController {
     @Autowired
     ClientService clientService;
 
+
+    @GetMapping("/products")
+    public Set<ProductDTO> getProductsDTO(){
+        return productService.getProductsDTO();
+    }
     @GetMapping("/products/clothes")
     public Set<ClothesDTO> getClothesDTOs() {
         return productService.getClothesDTO();

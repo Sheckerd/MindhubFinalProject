@@ -3,11 +3,9 @@ package com.PatitosdeHule.eCommerce.models;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.net.URL;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Product {
@@ -29,6 +27,9 @@ public class Product {
     private ClothesSize clothesSize;
     private int stock;
     private double price;
+
+    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
+    private Set<Article> articles = new HashSet<>();
 
     public Product() {};
 
@@ -143,5 +144,12 @@ public class Product {
         this.clothesSize = clothesSize;
     }
 
+    public Set<Article> getArticles() {
+        return articles;
+    }
 
+    public void addArticles (Article article){
+        article.setProduct(this);
+        articles.add(article);
+    }
 }

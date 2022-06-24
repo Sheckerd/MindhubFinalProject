@@ -1,6 +1,9 @@
 package com.PatitosdeHule.eCommerce.DTOs;
 
 import com.PatitosdeHule.eCommerce.models.Client;
+import com.PatitosdeHule.eCommerce.models.Invoice;
+
+import java.util.Set;
 
 public class ClientDTO {
 
@@ -10,6 +13,7 @@ public class ClientDTO {
     private String email;
     private String password;
     private String cellPhone;
+    private Set<Invoice> invoiceSet;
 
     public ClientDTO() {
     }
@@ -21,6 +25,7 @@ public class ClientDTO {
         this.email = client.getEmail();
         this.password = client.getPassword();
         this.cellPhone = client.getCellPhone();
+        
     }
 
     public long getId() {

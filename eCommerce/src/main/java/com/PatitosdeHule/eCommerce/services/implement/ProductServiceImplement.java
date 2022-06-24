@@ -3,6 +3,7 @@ package com.PatitosdeHule.eCommerce.services.implement;
 
 import com.PatitosdeHule.eCommerce.DTOs.ClothesDTO;
 import com.PatitosdeHule.eCommerce.DTOs.CosplayDTO;
+import com.PatitosdeHule.eCommerce.DTOs.ProductDTO;
 import com.PatitosdeHule.eCommerce.models.Product;
 import com.PatitosdeHule.eCommerce.models.ProductType;
 import com.PatitosdeHule.eCommerce.repositories.ProductRepository;
@@ -18,6 +19,12 @@ public class ProductServiceImplement implements ProductService {
 
     @Autowired
     private ProductRepository productRepository;
+
+    @Override
+    public Set<ProductDTO> getProductsDTO() {
+        return productRepository.findAll().stream().map(ProductDTO::new).collect(Collectors.toSet());
+
+    }
 
     @Override
     public void saveProduct(Product product) {

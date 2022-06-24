@@ -11,6 +11,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import java.util.List;
+
 
 @SpringBootApplication
 public class ECommerceApplication {
@@ -50,14 +52,6 @@ public class ECommerceApplication {
 
 		Product clotheHoodie = new Product("Hoodie Origami", "Gris", "Un hoodie muito delicioso mmmmmm", "https://i.ebayimg.com/thumbs/images/g/i0gAAOSwKpph3OLh/s-l300.jpg", "https://d3ugyf2ht6aenh.cloudfront.net/stores/830/660/products/zt-0686-frente-9744de8f9c1d9597e116038240713155-1024-1024.jpg", "Origami", ClothesType.HOODIE, false, ProductType.CLOTHES, ClothesSize.L, 17, 250);
         productService.saveProduct(clotheHoodie);
-
-         Product clotheHoodiePsycho = new Product("Hoodie Psycho", "Black", "Un hoodie muito delicioso mmmmmm", "https://i.ebayimg.com/thumbs/images/g/i0gAAOSwKpph3OLh/s-l300.jpg", "https://d3ugyf2ht6aenh.cloudfront.net/stores/830/660/products/zt-0686-frente-9744de8f9c1d9597e116038240713155-1024-1024.jpg", "Origami", ClothesType.HOODIE, false, ProductType.CLOTHES, ClothesSize.XS, 17, 250);
-         productService.saveProduct(clotheHoodiePsycho);
-
-		Client admin = new Client ("Admin", "admin", "admin@orgm.com", passwordEncoder.encode("soyadmin"), "2996827417");
-		Client client = new Client ("Melbita", "Morel", "melba@mindhub.com", passwordEncoder.encode("melba"), "2993910932");
-		clientService.saveClient(admin);
-		clientService.saveClient(client);
 
 
             //Cosplay

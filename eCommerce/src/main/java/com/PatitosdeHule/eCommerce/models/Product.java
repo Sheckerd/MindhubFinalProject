@@ -5,6 +5,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -16,7 +17,9 @@ public class Product {
     private long id;
 
     private String name;
-    private String color;
+    @ElementCollection
+    @Column(name="colors")
+    private List<String> colors;
     private String description;
     private String imageURL_front;
     private String imageURL_back;
@@ -34,10 +37,10 @@ public class Product {
     public Product() {};
 
 
-    public Product(String name, String color, String description, String imageURL_front, String imageURL_back, String animeTheme, ClothesType clothesType, boolean limitedEdition, ProductType productType, ClothesSize clothesSize, int stock, double price) {
+    public Product(String name, List<String> colors, String description, String imageURL_front, String imageURL_back, String animeTheme, ClothesType clothesType, boolean limitedEdition, ProductType productType, ClothesSize clothesSize, int stock, double price) {
 
         this.name = name;
-        this.color = color;
+        this.colors = colors;
         this.description = description;
         this.imageURL_front = imageURL_front;
         this.imageURL_back = imageURL_back;
@@ -102,11 +105,11 @@ public class Product {
     public String getImageURL_back() {return imageURL_back;}
     public void setImageURL_back(String imageURL_back) {this.imageURL_back = imageURL_back;}
 
-    public String getColor() {
-        return color;
+    public List<String> getColor() {
+        return colors;
     }
-    public void setColor(String color) {
-        this.color = color;
+    public void setColor(List<String> colors) {
+        this.colors = colors;
     }
 
     public String getAnimeTheme() {

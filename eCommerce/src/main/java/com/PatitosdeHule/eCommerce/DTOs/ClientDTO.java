@@ -25,7 +25,7 @@ public class ClientDTO {
         this.email = client.getEmail();
         this.password = client.getPassword();
         this.cellPhone = client.getCellPhone();
-        
+
     }
 
     public long getId() {

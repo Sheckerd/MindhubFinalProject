@@ -43,5 +43,9 @@ public class ProductServiceImplement implements ProductService {
 
 
 
+    @Override
+    public ProductDTO getProductById(long id) {
+        return new ProductDTO(productRepository.findById(id).orElse(null));
+    }
 
 }

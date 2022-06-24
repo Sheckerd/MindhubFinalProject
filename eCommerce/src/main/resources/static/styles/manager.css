@@ -8,9 +8,28 @@ body {
     font-family: poppins, sans-serif;
 }
 
+:root {
+    
+    --color-white-blue: #94C7EB;
+    --color-titles-red: #FF708A;
+    --color-yellow: #FFBD64;
+    --color-purple: #838BC5;
+    --color-pink: #BA9BC9;
+    --color-pink-background: #DBDBDB;
+    
+}
+
+
 form {
 
     width: 80%;
     height: 80vh;
-    
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: var(--color-pink-background);
+
 }
+

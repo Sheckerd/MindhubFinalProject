@@ -4,10 +4,7 @@ package com.PatitosdeHule.eCommerce.controllers;
 import com.PatitosdeHule.eCommerce.DTOs.ClothesDTO;
 import com.PatitosdeHule.eCommerce.DTOs.CosplayDTO;
 import com.PatitosdeHule.eCommerce.DTOs.ProductDTO;
-import com.PatitosdeHule.eCommerce.models.Client;
-import com.PatitosdeHule.eCommerce.models.ClothesSize;
-import com.PatitosdeHule.eCommerce.models.Product;
-import com.PatitosdeHule.eCommerce.models.ProductType;
+import com.PatitosdeHule.eCommerce.models.*;
 import com.PatitosdeHule.eCommerce.services.ClientService;
 import com.PatitosdeHule.eCommerce.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +38,13 @@ public class ProductController {
     @GetMapping("/products/cosplay")
     public Set<CosplayDTO> getCosplayDTOs() {
         return productService.getCosplayDTO();
+    }
+
+    @GetMapping("/products/{id}")
+    public ProductDTO getProduct(@PathVariable Long id) {
+
+        return productService.getProductById(id);
+
     }
 
     @PostMapping("/products/cosplay")
@@ -96,7 +100,7 @@ public class ProductController {
             return new ResponseEntity<>("Only administrators have permission", HttpStatus.FORBIDDEN);
         } //Si no es admin, no puede crear.
 
-        if (clothesDTO.getName().isEmpty() || clothesDTO.getDescription().isEmpty() || clothesDTO.getColor().isEmpty()) {
+        if (clothesDTO.getName().isEmpty() || clothesDTO.getDescription().isEmpty() || clothesDTO.getColors().isEmpty()) {
             return new ResponseEntity<>("Missing data: name or description needed", HttpStatus.FORBIDDEN);
         } //Si nombre y descripcion estan vacíos.
 
@@ -125,7 +129,7 @@ public class ProductController {
         } // Si el tipo de producto no coincide.
 
 
-        Product newClothes = new Product(clothesDTO.getName(), clothesDTO.getColor(), clothesDTO.getDescription(), clothesDTO.getImageURL_front(), clothesDTO.getImageURL_back(), clothesDTO.getAnimeTheme(), clothesDTO.getClothesType(), clothesDTO.isLimitedEdition(), clothesDTO.getProductType(), clothesDTO.getClothesSize(), clothesDTO.getStock(), clothesDTO.getPrice());
+        Product newClothes = new Product(clothesDTO.getName(), clothesDTO.getColors(), clothesDTO.getDescription(), clothesDTO.getImageURL_front(), clothesDTO.getImageURL_back(), clothesDTO.getAnimeTheme(), clothesDTO.getClothesType(), clothesDTO.isLimitedEdition(), clothesDTO.getProductType(), clothesDTO.getClothesSize(), clothesDTO.getStock(), clothesDTO.getPrice());
         productService.saveProduct(newClothes);
 
 

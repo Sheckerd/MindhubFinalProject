@@ -35,6 +35,13 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+:root {
+  --violetaPastel: #9F7FB1;
+  --rosaMasClaro: #F8C7D8;
+  --rosaMedio: #E6BDDA;
+  --rosa: #E792BD;
+  --naranjaPastel: #FCE0D6;
+ }
 
 html, body {
   height: 100%;
@@ -6050,6 +6057,7 @@ img.mfp-img {
 /*----------------------------------------*/
 .brand-slider {
   width: 100%;
+
 }
 .brand-slider .slick-track {
   display: -webkit-box;
@@ -6058,6 +6066,7 @@ img.mfp-img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+          gap: 3rem;
 }
 
 .brand-item {

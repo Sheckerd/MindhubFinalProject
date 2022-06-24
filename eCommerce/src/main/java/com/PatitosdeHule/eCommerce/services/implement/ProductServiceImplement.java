@@ -21,6 +21,12 @@ public class ProductServiceImplement implements ProductService {
     private ProductRepository productRepository;
 
     @Override
+    public Set<ProductDTO> getProductsDTO() {
+        return productRepository.findAll().stream().map(ProductDTO::new).collect(Collectors.toSet());
+
+    }
+
+    @Override
     public void saveProduct(Product product) {
         productRepository.save(product);
     }
@@ -35,10 +41,7 @@ public class ProductServiceImplement implements ProductService {
         return productRepository.findAll().stream().filter(product -> product.getProductType() == ProductType.COSPLAY).map(product -> new CosplayDTO(product)).collect(Collectors.toSet());
     }
 
-    @Override
-    public Set<ProductDTO> getProductsDTO() {
-        return productRepository.findAll().stream().map(product -> new ProductDTO(product)).collect(Collectors.toSet());
-    }
+
 
     @Override
     public ProductDTO getProductById(long id) {

@@ -34,7 +34,7 @@
 
 <body>
 
-<div class="main-wrapper">
+<div id="app" class="main-wrapper">
 
     <!-- Header Section Start -->
     <div class="header-section section">
@@ -47,8 +47,10 @@
                     <div class="col mt-10 mb-10 d-none d-md-flex">
                         <!-- Header Top Left Start -->
                         <div class="header-top-left">
-                            <p>Welcome to Origami</p>
-                            <p>Hotline: <a href="tel:2994137609">2994137609</a></p>
+                            <p>Bienvenido a Origami</p>
+							<i class="fa-brands fa-whatsapp">
+								<a href="https://chat.whatsapp.com/GgeI2LllN3lHOJJxnt652v">2994137609</a>
+							</i>
                         </div><!-- Header Top Left End -->
                     </div>
 
@@ -56,22 +58,16 @@
                         <!-- Header Language Currency Start -->
                         <ul class="header-lan-curr">
 
-                            <li><a href="#">eng</a>
+                            <li><a href="#">es</a>
                                 <ul>
                                     <li><a href="#">english</a></li>
                                     <li><a href="#">spanish</a></li>
-                                    <li><a href="#">france</a></li>
-                                    <li><a href="#">russian</a></li>
-                                    <li><a href="#">chinese</a></li>
                                 </ul>
                             </li>
 
-                            <li><a href="#">$usd</a>
+                            <li><a href="#">$ARS</a>
                                 <ul>
-                                    <li><a href="#">pound</a></li>
-                                    <li><a href="#">dollar</a></li>
-                                    <li><a href="#">euro</a></li>
-                                    <li><a href="#">yen</a></li>
+                                    <li><a href="#">USD</a></li>
                                 </ul>
                             </li>
 
@@ -181,19 +177,7 @@
             </div><!-- Hero Item End -->
 
             <!-- Hero Item Start -->
-            <div class="hero-item" style="background-image: url(assets/images/hero/hero-6.jpg)">
-				<div class="container">
-
-					<!-- Hero Content -->
-					<div class="hero-content-2">
-
-						<h1>Get 35% off <br>Latest Baby Product</h1>
-						<a href="#">SHOP NOW</a>
-
-					</div>
-				
-                </div>
-            </div><!-- Hero Item End -->
+            
 
         </div><!-- Hero Slider End -->
 
@@ -203,31 +187,29 @@
     <div class="product-section section section-padding">
         <div class="container">
 
-            <div class="row">
-				<ul class="product-tab-list nav col mb-30">
-				  <li><a class="active" data-bs-toggle="tab" href="#product-new">New</a></li>
-				  <li><a data-bs-toggle="tab" href="#product-popular">Popular</a></li>
-				  <li><a data-bs-toggle="tab" href="#product-sale">Sale</a></li>
+            <!-- <div class="row">
+				<ul class="product-tab-list nav col mb-30" v-for="product in products">
+				  <li>{{product.description}}</li>
+				  <li><img></li>
 				</ul>
-            </div>
+            </div> -->
 
             <div class="row">
                 <div class="tab-content col-12" id="myTabContent">
 					<div class="tab-pane fade show active" id="product-new">
 						<div class="row mbn-40">
+							<div class="d-flex flex-wrap justify-content-between">
 
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12 mb-40">
-
-								<div class="product-item">
+								<div class="product-item" v-for="product in products">
 									<div class="product-inner">
 
 										<div class="image">
-											<img src="./assets/images/product/productoCamisaOnePeace.jpg" alt="Image">
+											<img v-bind:src="product.imageURL_front" alt="Image">
 
 											<div class="image-overlay">
 												<div class="action-buttons">
 													<button>add to cart</button>
-													<button>add to wishlist</button>
+													<button><i class="fa-light fa-heart"></i></button>
 												</div>
 											</div>
 
@@ -237,352 +219,33 @@
 
 											<div class="content-left">
 
-												<h4 class="title"><a href="single-product.html">Tmart Baby Dress</a></h4>
+												<h4 class="title"><a href="single-product.html">{{product.name}}</a></h4>
 
 												<div class="ratting">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-half-o"></i>
-													<i class="fa fa-star-o"></i>
+											  <p>{{product.animeTheme}}</p>
 												</div>
 
-												<h5 class="size">Size: <span>S</span><span>M</span><span>L</span><span>XL</span></h5>
-												<h5 class="color">Color: <span style="background-color: #ffb2b0"></span><span style="background-color: #0271bc"></span><span style="background-color: #efc87c"></span><span style="background-color: #00c183"></span></h5>
+												<h5 class="size">Size:
+													<span>{{product.clothesSize}}</span>
+													 <!-- <span>S</span><span>M</span><span>L</span><span>XL</span> -->
+												</h5>
+												<h5 v-if="product.color != null" style="display: inline;" class="color">
+													Color: 
+													<div class=" d-flex flex-row">
+														<span v-if="product.color.includes('black')" style="background-color: #000000"></span>
+														<span v-if="product.color.includes('blue')" style="background-color: #0271bc"></span>
+														<span v-if="product.color.includes('grey')" style="background-color: #8f8e8b"></span>
+														<span v-if="product.color.includes('purple')" style="background-color: #7a0da6"></span>
+														<span v-if="product.color.includes('green')" style="background-color: #07a371"></span>
+														<span v-if="product.color.includes('white')" style="background-color: #ffffff"></span>
+														<span v-if="product.color.includes('red')" style="background-color: #ad1717"></span>
+													</div>
+												</h5>
 
 											</div>
 
 											<div class="content-right">
-												<span class="price">$25</span>
-											</div>
-
-										</div>
-
-									</div>
-								</div>
-
-							</div>
-
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12 mb-40">
-
-								<div class="product-item">
-									<div class="product-inner">
-
-										<div class="image">
-											<img src="assets/images/product/img24.jpg" alt="Image">
-
-											<div class="image-overlay">
-												<div class="action-buttons">
-													<button>add to cart</button>
-													<button>add to wishlist</button>
-												</div>
-											</div>
-
-										</div>
-
-										<div class="content">
-
-											<div class="content-left">
-
-												<h4 class="title"><a href="single-product.html">Jumpsuit Outfits</a></h4>
-
-												<div class="ratting">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-
-												<h5 class="size">Size: <span>S</span><span>M</span><span>L</span><span>XL</span></h5>
-												<h5 class="color">Color: <span style="background-color: #ffb2b0"></span><span style="background-color: #0271bc"></span><span style="background-color: #efc87c"></span><span style="background-color: #00c183"></span></h5>
-
-											</div>
-
-											<div class="content-right">
-												<span class="price">$09</span>
-											</div>
-
-										</div>
-
-									</div>
-								</div>
-
-							</div>
-
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12 mb-40">
-
-								<div class="product-item">
-									<div class="product-inner">
-
-										<div class="image">
-											<img src="assets/images/product/img24.jpg" alt="Image">
-
-											<div class="image-overlay">
-												<div class="action-buttons">
-													<button>add to cart</button>
-													<button>add to wishlist</button>
-												</div>
-											</div>
-
-										</div>
-
-										<div class="content">
-
-											<div class="content-left">
-									
-												<h4 class="title"><a href="single-product.html">Smart Shirt</a></h4>
-
-												<div class="ratting">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-o"></i>
-												</div>
-
-												<h5 class="size">Size: <span>S</span><span>M</span><span>L</span><span>XL</span></h5>
-												<h5 class="color">Color: <span style="background-color: #ffb2b0"></span><span style="background-color: #0271bc"></span><span style="background-color: #efc87c"></span><span style="background-color: #00c183"></span></h5>
-
-											</div>
-
-											<div class="content-right">
-												<span class="price">$18</span>
-											</div>
-
-										</div>
-
-									</div>
-								</div>
-
-							</div>
-
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12 mb-40">
-
-								<div class="product-item">
-									<div class="product-inner">
-
-										<div class="image">
-											<img src="assets/images/product/product-4.jpg" alt="Image">
-
-											<div class="image-overlay">
-												<div class="action-buttons">
-													<button>add to cart</button>
-													<button>add to wishlist</button>
-												</div>
-											</div>
-
-										</div>
-
-										<div class="content">
-
-											<div class="content-left">
-
-												<h4 class="title"><a href="single-product.html">Kids Shoe</a></h4>
-
-												<div class="ratting">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-half-o"></i>
-													<i class="fa fa-star-o"></i>
-												</div>
-
-												<h5 class="size">Size: <span>S</span><span>M</span><span>L</span><span>XL</span></h5>
-												<h5 class="color">Color: <span style="background-color: #ffb2b0"></span><span style="background-color: #0271bc"></span><span style="background-color: #efc87c"></span><span style="background-color: #00c183"></span></h5>
-
-											</div>
-
-											<div class="content-right">
-												<span class="price">$15</span>
-											</div>
-
-										</div>
-
-									</div>
-								</div>
-
-							</div>
-
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12 mb-40">
-
-								<div class="product-item">
-									<div class="product-inner">
-
-										<div class="image">
-											<img src="assets/images/product/product-5.jpg" alt="Image">
-
-											<div class="image-overlay">
-												<div class="action-buttons">
-													<button>add to cart</button>
-													<button>add to wishlist</button>
-												</div>
-											</div>
-
-										</div>
-
-										<div class="content">
-
-											<div class="content-left">
-
-												<h4 class="title"><a href="single-product.html"> Bowknot Bodysuit</a></h4>
-
-												<div class="ratting">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-half-o"></i>
-												</div>
-
-												<h5 class="size">Size: <span>S</span><span>M</span><span>L</span><span>XL</span></h5>
-												<h5 class="color">Color: <span style="background-color: #ffb2b0"></span><span style="background-color: #0271bc"></span><span style="background-color: #efc87c"></span><span style="background-color: #00c183"></span></h5>
-
-											</div>
-
-											<div class="content-right">
-												<span class="price">$12</span>
-											</div>
-
-										</div>
- 
-									</div>
-								</div>
-
-							</div>
-
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12 mb-40">
-
-								<div class="product-item">
-									<div class="product-inner">
-
-										<div class="image">
-											<img src="assets/images/product/product-6.jpg" alt="Image">
-
-											<div class="image-overlay">
-												<div class="action-buttons">
-													<button>add to cart</button>
-													<button>add to wishlist</button>
-												</div>
-											</div>
-
-										</div>
-
-										<div class="content">
-
-											<div class="content-left">
-
-												<h4 class="title"><a href="single-product.html">Striped T-Shirt</a></h4>
-
-												<div class="ratting">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-o"></i>
-												</div>
-
-												<h5 class="size">Size: <span>S</span><span>M</span><span>L</span><span>XL</span></h5>
-												<h5 class="color">Color: <span style="background-color: #ffb2b0"></span><span style="background-color: #0271bc"></span><span style="background-color: #efc87c"></span><span style="background-color: #00c183"></span></h5>
-
-											</div>
-
-											<div class="content-right">
-												<span class="price">$12</span>
-											</div>
-
-										</div>
-
-									</div>
-								</div>
-
-							</div>
-
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12 mb-40">
-
-								<div class="product-item">
-									<div class="product-inner">
-
-										<div class="image">
-											<img src="assets/images/product/product-7.jpg" alt="Image">
-
-											<div class="image-overlay">
-												<div class="action-buttons">
-													<button>add to cart</button>
-													<button>add to wishlist</button>
-												</div>
-											</div>
-
-										</div>
-
-										<div class="content">
-
-											<div class="content-left">
-
-												<h4 class="title"><a href="single-product.html">Kislen Jak Tops</a></h4>
-
-												<div class="ratting">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-
-												<h5 class="size">Size: <span>S</span><span>M</span><span>L</span><span>XL</span></h5>
-												<h5 class="color">Color: <span style="background-color: #ffb2b0"></span><span style="background-color: #0271bc"></span><span style="background-color: #efc87c"></span><span style="background-color: #00c183"></span></h5>
-
-											</div>
-
-											<div class="content-right">
-												<span class="price">$29</span>
-											</div>
-
-										</div>
-
-									</div>
-								</div>
-
-							</div>
-
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12 mb-40">
-
-								<div class="product-item">
-									<div class="product-inner">
-
-										<div class="image">
-											<img src="assets/images/product/product-8.jpg" alt="Image">
-
-											<div class="image-overlay">
-												<div class="action-buttons">
-													<button>add to cart</button>
-													<button>add to wishlist</button>
-												</div>
-											</div>
-
-										</div>
-
-										<div class="content">
-
-											<div class="content-left">
-
-												<h4 class="title"><a href="single-product.html">Lattic Shirt</a></h4>
-
-												<div class="ratting">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-o"></i>
-												</div>
-
-												<h5 class="size">Size: <span>S</span><span>M</span><span>L</span><span>XL</span></h5>
-												<h5 class="color">Color: <span style="background-color: #ffb2b0"></span><span style="background-color: #0271bc"></span><span style="background-color: #efc87c"></span><span style="background-color: #00c183"></span></h5>
-
-											</div>
-
-											<div class="content-right">
-												<span class="price">$08</span>
+												<span class="price">${{product.price}}</span>
 											</div>
 
 										</div>
@@ -594,388 +257,8 @@
 
 						</div>
 					</div>
-					<div class="tab-pane fade" id="product-popular">
-						<div class="row mbn-40">
-
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12 mb-40">
-
-								<div class="product-item">
-									<div class="product-inner">
-
-										<div class="image">
-											<img src="assets/images/product/product-4.jpg" alt="Image">
-
-											<div class="image-overlay">
-												<div class="action-buttons">
-													<button>add to cart</button>
-													<button>add to wishlist</button>
-												</div>
-											</div>
-
-										</div>
-
-										<div class="content">
-
-											<div class="content-left">
-
-												<h4 class="title"><a href="single-product.html">Kids Shoe</a></h4>
-
-												<div class="ratting">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-half-o"></i>
-													<i class="fa fa-star-o"></i>
-												</div>
-
-												<h5 class="size">Size: <span>S</span><span>M</span><span>L</span><span>XL</span></h5>
-												<h5 class="color">Color: <span style="background-color: #ffb2b0"></span><span style="background-color: #0271bc"></span><span style="background-color: #efc87c"></span><span style="background-color: #00c183"></span></h5>
-
-											</div>
-
-											<div class="content-right">
-												<span class="price">$15</span>
-											</div>
-
-										</div>
-
-									</div>
-								</div>
-
-							</div>
-
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12 mb-40">
-
-								<div class="product-item">
-									<div class="product-inner">
-
-										<div class="image">
-											<img src="assets/images/product/product-5.jpg" alt="Image">
-
-											<div class="image-overlay">
-												<div class="action-buttons">
-													<button>add to cart</button>
-													<button>add to wishlist</button>
-												</div>
-											</div>
-
-										</div>
-
-										<div class="content">
-
-											<div class="content-left">
-
-												<h4 class="title"><a href="single-product.html"> Bowknot Bodysuit</a></h4>
-
-												<div class="ratting">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-half-o"></i>
-												</div>
-
-												<h5 class="size">Size: <span>S</span><span>M</span><span>L</span><span>XL</span></h5>
-												<h5 class="color">Color: <span style="background-color: #ffb2b0"></span><span style="background-color: #0271bc"></span><span style="background-color: #efc87c"></span><span style="background-color: #00c183"></span></h5>
-
-											</div>
-
-											<div class="content-right">
-												<span class="price">$12</span>
-											</div>
-
-										</div>
-
-									</div>
-								</div>
-
-							</div>
-
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12 mb-40">
-
-								<div class="product-item">
-									<div class="product-inner">
-
-										<div class="image">
-											<img src="assets/images/product/product-6.jpg" alt="Image">
-
-											<div class="image-overlay">
-												<div class="action-buttons">
-													<button>add to cart</button>
-													<button>add to wishlist</button>
-												</div>
-											</div>
-
-										</div>
-
-										<div class="content">
-
-											<div class="content-left">
-
-												<h4 class="title"><a href="single-product.html">Striped T-Shirt</a></h4>
-
-												<div class="ratting">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-o"></i>
-												</div>
-
-												<h5 class="size">Size: <span>S</span><span>M</span><span>L</span><span>XL</span></h5>
-												<h5 class="color">Color: <span style="background-color: #ffb2b0"></span><span style="background-color: #0271bc"></span><span style="background-color: #efc87c"></span><span style="background-color: #00c183"></span></h5>
-
-											</div>
-
-											<div class="content-right">
-												<span class="price">$12</span>
-											</div>
-
-										</div>
-
-									</div>
-								</div>
-
-							</div>
-
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12 mb-40">
-
-								<div class="product-item">
-									<div class="product-inner">
-
-										<div class="image">
-											<img src="assets/images/product/product-7.jpg" alt="Image">
-
-											<div class="image-overlay">
-												<div class="action-buttons">
-													<button>add to cart</button>
-													<button>add to wishlist</button>
-												</div>
-											</div>
-
-										</div>
-
-										<div class="content">
-
-											<div class="content-left">
-
-												<h4 class="title"><a href="single-product.html">Kislen Jak Tops</a></h4>
-
-												<div class="ratting">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-
-												<h5 class="size">Size: <span>S</span><span>M</span><span>L</span><span>XL</span></h5>
-												<h5 class="color">Color: <span style="background-color: #ffb2b0"></span><span style="background-color: #0271bc"></span><span style="background-color: #efc87c"></span><span style="background-color: #00c183"></span></h5>
-
-											</div>
-
-											<div class="content-right">
-												<span class="price">$29</span>
-											</div>
-
-										</div>
-
-									</div>
-								</div>
-
-							</div>
-
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12 mb-40">
-
-								<div class="product-item">
-									<div class="product-inner">
-
-										<div class="image">
-											<img src="assets/images/product/product-8.jpg" alt="Image">
-
-											<div class="image-overlay">
-												<div class="action-buttons">
-													<button>add to cart</button>
-													<button>add to wishlist</button>
-												</div>
-											</div>
-
-										</div>
-
-										<div class="content">
-
-											<div class="content-left">
-
-												<h4 class="title"><a href="single-product.html">Lattic Shirt</a></h4>
-
-												<div class="ratting">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-o"></i>
-												</div>
-
-												<h5 class="size">Size: <span>S</span><span>M</span><span>L</span><span>XL</span></h5>
-												<h5 class="color">Color: <span style="background-color: #ffb2b0"></span><span style="background-color: #0271bc"></span><span style="background-color: #efc87c"></span><span style="background-color: #00c183"></span></h5>
-
-											</div>
-
-											<div class="content-right">
-												<span class="price">$08</span>
-											</div>
-
-										</div>
-
-									</div>
-								</div>
-
-							</div>
-
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12 mb-40">
-
-								<div class="product-item">
-									<div class="product-inner">
-
-										<div class="image">
-											<img src="assets/images/product/product-1.jpg" alt="Image">
-
-											<div class="image-overlay">
-												<div class="action-buttons">
-													<button>add to cart</button>
-													<button>add to wishlist</button>
-												</div>
-											</div>
-
-										</div>
-
-										<div class="content">
-
-											<div class="content-left">
-
-												<h4 class="title"><a href="single-product.html">Tmart Baby Dress</a></h4>
-
-												<div class="ratting">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-half-o"></i>
-													<i class="fa fa-star-o"></i>
-												</div>
-
-												<h5 class="size">Size: <span>S</span><span>M</span><span>L</span><span>XL</span></h5>
-												<h5 class="color">Color: <span style="background-color: #ffb2b0"></span><span style="background-color: #0271bc"></span><span style="background-color: #efc87c"></span><span style="background-color: #00c183"></span></h5>
-
-											</div>
-
-											<div class="content-right">
-												<span class="price">$25</span>
-											</div>
-
-										</div>
-
-									</div>
-								</div>
-
-							</div>
-
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12 mb-40">
-
-								<div class="product-item">
-									<div class="product-inner">
-
-										<div class="image">
-											<img src="assets/images/product/product-2.jpg" alt="Image">
-
-											<div class="image-overlay">
-												<div class="action-buttons">
-													<button>add to cart</button>
-													<button>add to wishlist</button>
-												</div>
-											</div>
-
-										</div>
-
-										<div class="content">
-
-											<div class="content-left">
-
-												<h4 class="title"><a href="single-product.html">Jumpsuit Outfits</a></h4>
-
-												<div class="ratting">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-												</div>
-
-												<h5 class="size">Size: <span>S</span><span>M</span><span>L</span><span>XL</span></h5>
-												<h5 class="color">Color: <span style="background-color: #ffb2b0"></span><span style="background-color: #0271bc"></span><span style="background-color: #efc87c"></span><span style="background-color: #00c183"></span></h5>
-
-											</div>
-
-											<div class="content-right">
-												<span class="price">$09</span>
-											</div>
-
-										</div>
-
-									</div>
-								</div>
-
-							</div>
-
-							<div class="col-xl-3 col-lg-4 col-md-6 col-12 mb-40">
-
-								<div class="product-item">
-									<div class="product-inner">
-
-										<div class="image">
-											<img src="assets/images/product/product-3.jpg" alt="Image">
-
-											<div class="image-overlay">
-												<div class="action-buttons">
-													<button>add to cart</button>
-													<button>add to wishlist</button>
-												</div>
-											</div>
-
-										</div>
-
-										<div class="content">
-
-											<div class="content-left">
-
-												<h4 class="title"><a href="single-product.html">Smart Shirt</a></h4>
-
-												<div class="ratting">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star-o"></i>
-												</div>
-
-												<h5 class="size">Size: <span>S</span><span>M</span><span>L</span><span>XL</span></h5>
-												<h5 class="color">Color: <span style="background-color: #ffb2b0"></span><span style="background-color: #0271bc"></span><span style="background-color: #efc87c"></span><span style="background-color: #00c183"></span></h5>
-
-											</div>
-
-											<div class="content-right">
-												<span class="price">$18</span>
-											</div>
-
-										</div>
-
-									</div>
-								</div>
-
-							</div>
-
-						</div>
-					</div>
-					<div class="tab-pane fade" id="product-sale">
+					
+					<!-- <div class="tab-pane fade" id="product-sale">
 						<div class="row mbn-40">
 
 							<div class="col-xl-3 col-lg-4 col-md-6 col-12 mb-40">
@@ -1355,7 +638,7 @@
 							</div>
 
 						</div>
-					</div>
+					</div> -->
 				</div>
             </div>
 
@@ -1397,26 +680,25 @@
         </div>
     </div><!-- Banner Section End -->
 
-    <!-- Product Section Start -->
+    <!-- Product limited Section  Start -->
     <div class="product-section section section-padding pt-0">
         <div class="container">
 
 			<div class="row">
 				<div class="section-title text-center col mb-30">
-					<h1>Feature Product</h1>
-					<p>All featured product find here</p>
+					<h1>Edicion Limitada</h1>
+					<!-- <p>All featured product find here</p> -->
 				</div>
 			</div>
-
-			<div class="product-slider slick-space">
-
+			{{limitedEdition}}
+			<div class="product-slider slick-space d-flex justify-content-between">
 				<div class="slick-slide">
 
-					<div class="product-item">
-						<div class="product-inner">
+					<div class="product-item" >
+						<div class="product-inner" v-for="product in productsLimitedEdition">
 
 							<div class="image">
-								<img src="assets/images/product/product-1.jpg" alt="Image">
+								<img v-bind:src="product.imageURL_front" alt="Image">
 
 								<div class="image-overlay">
 									<div class="action-buttons">
@@ -1431,211 +713,34 @@
 
 								<div class="content-left">
 
-									<h4 class="title"><a href="single-product.html">Tmart Baby Dress</a></h4>
+									<h4 class="title"><a href="single-product.html"> {{product.name}}</a></h4>
 
 									<div class="ratting">
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star-half-o"></i>
-										<i class="fa fa-star-o"></i>
+										<p>{{product.animeTheme}}</p>
 									</div>
 
-									<h5 class="size">Size: <span>S</span><span>M</span><span>L</span><span>XL</span></h5>
-									<h5 class="color">Color: <span style="background-color: #ffb2b0"></span><span style="background-color: #0271bc"></span><span style="background-color: #efc87c"></span><span style="background-color: #00c183"></span></h5>
+									<h5 class="size">Size:
+										<span>{{product.clothesSize}}</span>
+										 <!-- <span>S</span><span>M</span><span>L</span><span>XL</span> -->
+									</h5>
+									<h5 v-if="product.color != null" style="display: inline;" class="color">
+										Color: 
+										<div class=" d-flex flex-row">
+											<span v-if="product.color.includes('black')" style="background-color: #000000"></span>
+											<span v-if="product.color.includes('blue')" style="background-color: #0271bc"></span>
+											<span v-if="product.color.includes('gray')" style="background-color: #8f8e8b"></span>
+											<span v-if="product.color.includes('purple')" style="background-color: #7a0da6"></span>
+											<span v-if="product.color.includes('green')" style="background-color: #07a371"></span>
+											<span v-if="product.color.includes('white')" style="background-color: #ffffff"></span>
+											<span v-if="product.color.includes('red')" style="background-color: #ad1717"></span>
+										</div>
+									</h5>
+									
 
 								</div>
 
 								<div class="content-right">
-									<span class="price">$25</span>
-								</div>
-
-							</div>
-
-						</div>
-					</div>
-
-				</div>
-
-				<div class="slick-slide">
-
-					<div class="product-item">
-						<div class="product-inner">
-
-							<div class="image">
-								<img src="assets/images/product/product-2.jpg" alt="Image">
-
-								<div class="image-overlay">
-									<div class="action-buttons">
-										<button>add to cart</button>
-										<button>add to wishlist</button>
-									</div>
-								</div>
-
-							</div>
-
-							<div class="content">
-
-								<div class="content-left">
-
-									<h4 class="title"><a href="single-product.html">Jumpsuit Outfits</a></h4>
-
-									<div class="ratting">
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-									</div>
-
-									<h5 class="size">Size: <span>S</span><span>M</span><span>L</span><span>XL</span></h5>
-									<h5 class="color">Color: <span style="background-color: #ffb2b0"></span><span style="background-color: #0271bc"></span><span style="background-color: #efc87c"></span><span style="background-color: #00c183"></span></h5>
-
-								</div>
-
-								<div class="content-right">
-									<span class="price">$09</span>
-								</div>
-
-							</div>
-
-						</div>
-					</div>
-
-				</div>
-
-				<div class="slick-slide">
-
-					<div class="product-item">
-						<div class="product-inner">
-
-							<div class="image">
-								<img src="assets/images/product/product-3.jpg" alt="Image">
-
-								<div class="image-overlay">
-									<div class="action-buttons">
-										<button>add to cart</button>
-										<button>add to wishlist</button>
-									</div>
-								</div>
-
-							</div>
-
-							<div class="content">
-
-								<div class="content-left">
-
-									<h4 class="title"><a href="single-product.html">Smart Shirt</a></h4>
-
-									<div class="ratting">
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star-o"></i>
-									</div>
-
-									<h5 class="size">Size: <span>S</span><span>M</span><span>L</span><span>XL</span></h5>
-									<h5 class="color">Color: <span style="background-color: #ffb2b0"></span><span style="background-color: #0271bc"></span><span style="background-color: #efc87c"></span><span style="background-color: #00c183"></span></h5>
-
-								</div>
-
-								<div class="content-right">
-									<span class="price">$18</span>
-								</div>
-
-							</div>
-
-						</div>
-					</div>
-
-				</div>
-
-				<div class="slick-slide">
-
-					<div class="product-item">
-						<div class="product-inner">
-
-							<div class="image">
-								<img src="assets/images/product/product-4.jpg" alt="Image">
-
-								<div class="image-overlay">
-									<div class="action-buttons">
-										<button>add to cart</button>
-										<button>add to wishlist</button>
-									</div>
-								</div>
-
-							</div>
-
-							<div class="content">
-
-								<div class="content-left">
-
-									<h4 class="title"><a href="single-product.html">Kids Shoe</a></h4>
-
-									<div class="ratting">
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star-half-o"></i>
-										<i class="fa fa-star-o"></i>
-									</div>
-
-									<h5 class="size">Size: <span>S</span><span>M</span><span>L</span><span>XL</span></h5>
-									<h5 class="color">Color: <span style="background-color: #ffb2b0"></span><span style="background-color: #0271bc"></span><span style="background-color: #efc87c"></span><span style="background-color: #00c183"></span></h5>
-
-								</div>
-
-								<div class="content-right">
-									<span class="price">$15</span>
-								</div>
-
-							</div>
-
-						</div>
-					</div>
-
-				</div>
-
-				<div class="slick-slide">
-
-					<div class="product-item">
-						<div class="product-inner">
-
-							<div class="image">
-								<img src="assets/images/product/product-5.jpg" alt="Image">
-
-								<div class="image-overlay">
-									<div class="action-buttons">
-										<button>add to cart</button>
-										<button>add to wishlist</button>
-									</div>
-								</div>
-
-							</div>
-
-							<div class="content">
-
-								<div class="content-left">
-
-									<h4 class="title"><a href="single-product.html"> Bowknot Bodysuit</a></h4>
-
-									<div class="ratting">
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star-half-o"></i>
-									</div>
-
-									<h5 class="size">Size: <span>S</span><span>M</span><span>L</span><span>XL</span></h5>
-									<h5 class="color">Color: <span style="background-color: #ffb2b0"></span><span style="background-color: #0271bc"></span><span style="background-color: #efc87c"></span><span style="background-color: #00c183"></span></h5>
-
-								</div>
-
-								<div class="content-right">
-									<span class="price">$12</span>
+									<span class="price">${{product.price}}</span>
 								</div>
 
 							</div>
@@ -1686,8 +791,8 @@
 
                         <div class="icon"><img src="assets/images/feature/feature-1.png" alt="Image"></div>
                         <div class="content">
-                            <h3>Free Shipping</h3>
-                            <p>Start from $100</p>
+                            <h3>Envios Gratis</h3>
+                            <p>Desde $100</p>
                         </div>
 
                     </div>
@@ -1698,8 +803,8 @@
 
                         <div class="icon"><img src="assets/images/feature/feature-2.png" alt="Image"></div>
                         <div class="content">
-                            <h3>Money Back Guarantee</h3>
-                            <p>Back within 25 days</p>
+                            <h3>Reembolsos</h3>
+                            <p>Devoluciones en 25 dias</p>
                         </div>
 
                     </div>
@@ -1710,8 +815,8 @@
 
                         <div class="icon"><img src="assets/images/feature/feature-3.png" alt="Image"></div>
                         <div class="content">
-                            <h3>Secure Payment</h3>
-                            <p>Payment Security</p>
+                            <h3>Pagos Seguros</h3>
+                           
                         </div>
 
                     </div>
@@ -1724,10 +829,10 @@
     <!-- Blog Section Start -->
     <div class="blog-section section section-padding pt-0">
         <div class="container">
-            <div class="row mbn-40">
+            <div class="row">
 				
 				<!-- SnapWidget -->
-				<iframe src="https://snapwidget.com/embed/1000732" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:765px; height:510px"></iframe>
+				<iframe src="https://snapwidget.com/embed/1000732" href="https://www.instagram.com/origami.anime/" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:765px; height:510px"></iframe>
 
             </div>
         </div>
@@ -1801,7 +906,7 @@
 
                 <div class="footer-widget col-lg-3 col-md-6 col-12 mb-40">
                     <h4 class="title">NEWSLETTER</h4>
-                    <p<>Suscribete a nuestro newsletter para mantenerte actualizado sobre nuestros productos!</p>
+                    <p>Suscribete a nuestro newsletter para mantenerte actualizado sobre nuestros productos!</p>
 
                     <form id="mc-form" class="mc-form footer-subscribe-form">
                         <input id="mc-email" autocomplete="off" placeholder="Ingrese su email aquí" name="EMAIL" type="email">
@@ -1837,8 +942,16 @@
 </div>
 
 <!-- JS
+
+	
 ============================================ -->
 
+
+
+<script src="https://kit.fontawesome.com/8872e142cf.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/vue@3"></script>
+<script src="assets/js/index.js"></script>
 <!-- jQuery JS -->
 <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
 <!-- Migrate JS -->
@@ -1849,7 +962,6 @@
 <script src="assets/js/plugins.js"></script>
 <!-- Main JS -->
 <script src="assets/js/main.js"></script>
-
 </body>
 
 </html>

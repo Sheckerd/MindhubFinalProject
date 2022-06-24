@@ -10,11 +10,10 @@ import java.util.Set;
 
 public interface ProductService {
 
+    Set<ProductDTO> getProductsDTO();
     void saveProduct(Product product);
     Set<ClothesDTO> getClothesDTO();
     Set<CosplayDTO> getCosplayDTO();
-    Set<ProductDTO> getProductsDTO();
-    ProductDTO getProductById(long id);
 
 
 

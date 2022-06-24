@@ -5,10 +5,12 @@ import com.PatitosdeHule.eCommerce.models.ClothesType;
 import com.PatitosdeHule.eCommerce.models.Product;
 import com.PatitosdeHule.eCommerce.models.ProductType;
 
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+
 
 public class ProductDTO {
 
@@ -25,6 +27,7 @@ public class ProductDTO {
     private ClothesSize clothesSize;
     private int stock;
     private double price;
+
     private Set<ArticleDTO> articleDTOSet = new HashSet<>();
 
     public ProductDTO() {
@@ -44,6 +47,7 @@ public class ProductDTO {
         this.clothesSize = product.getClothesSize();
         this.stock = product.getStock();
         this.price = product.getPrice();
+
         this.articleDTOSet = product.getArticles().stream().map(article -> new ArticleDTO(article)).collect(Collectors.toSet());
     }
 
@@ -146,6 +150,9 @@ public class ProductDTO {
     public void setPrice(double price) {
         this.price = price;
     }
+
+
+
 
     public Set<ArticleDTO> getArticleDTOSet() {
         return articleDTOSet;

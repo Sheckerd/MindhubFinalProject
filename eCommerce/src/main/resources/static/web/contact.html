@@ -30,9 +30,15 @@
     
     <!-- Modernizer JS -->
     <script src="assets/js/vendor/modernizr-3.11.2.min.js"></script>
+    
+    <!-- AOS Style CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 </head>
 
 <body>
+
+    <div id="app">
 
 <div class="main-wrapper">
 
@@ -47,8 +53,9 @@
                     <div class="col mt-10 mb-10 d-none d-md-flex">
                         <!-- Header Top Left Start -->
                         <div class="header-top-left">
-                            <p>Welcome to Origami</p>
-                            <p>Hotline: <a href="tel:11-57199026">11-57199026</a></p>
+                            <p>Bienvenido a Origami</p>
+                            <i class="fa-solid fa-phone"><a href="tel:11-57199026">11-57199026</a></i>
+                            
                         </div><!-- Header Top Left End -->
                     </div>
 
@@ -82,8 +89,8 @@
                         <!-- Header Shop Links Start -->
                         <div class="header-top-right">
 
-                            <p><a href="my-account.html">My Account</a></p>
-                            <p><a href="login-register.html">Register</a><a href="login-register.html">Login</a></p>
+                            <p><a href="my-account.html">Mi Cuenta</a></p>
+                            <p><a href="login-register.html">Registro</a><a href="login-register.html">Login</a></p>
 
                         </div><!-- Header Shop Links End -->
                     </div>
@@ -137,13 +144,13 @@
                                 <ul>
                                     <li><a href="index.html">HOME</a>
                                     </li>
-                                    <li><a href="shop.html">SHOP</a>
+                                    <li><a href="shop.html">Tienda</a>
                                         <ul class="sub-menu">
-                                            <li><a href="shop.html">Shop</a></li>
-                                            <li><a href="single-product.html">Shop single product</a></li>
+                                            <li><a href="shop.html">Ropa</a></li>
+                                            <li><a href="single-product.html">Cosplay</a></li>
                                         </ul>
                                     </li>
-                                    <li class="active"><a href="contact.html">CONTACT</a></li>
+                                    <li class="active"><a href="contact.html">Contactanos</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -159,15 +166,15 @@
     </div><!-- Header Section End -->
 
     <!-- Page Banner Section Start -->
-    <div class="page-banner-section section" style="background-image: url(assets/images/hero/imgPortadaContact.jpg)">
+    <div class="page-banner-section section"  >
         <div class="container">
             <div class="row">
                 <div class="page-banner-content col">
 
-                    <h1>Contact us</h1>
+                    <h1>Contactanos</h1>
                     <ul class="page-breadcrumb">
-                        <li><a href="index-3.html">Home</a></li>
-                        <li><a href="contact.html">Contact us</a></li>
+                        <li><a href="index-3.html">Inicio</a></li>
+                        <li><a href="contact.html">Contactanos</a></li>
                     </ul>
 
                 </div>
@@ -181,13 +188,13 @@
             <div class="row row-30 mbn-40">
 
                <div class="contact-info-wrap col-md-6 col-12 mb-40">
-                   <h3>Get in Touch</h3>
-                 <p>Origami has a wide variety of products that you can see in our official store. Also if you are a premium customer you will have access to all the new catalog that arrives every week. Be part of the biggest otaku community.</p>
+                   <h3>Contactanos</h3>
+                     <p>Origami tiene una gran variedad de productos que puedes ver en nuestra tienda oficial. Además si eres cliente premium tendrás acceso a todo el nuevo catálogo que llega cada semana. Forma parte de la mayor comunidad otaku.</p>
                    <ul class="contact-info">
-                       <li>
-                           <i class="fa fa-map-marker"></i>
-                           <p>Galery Kuska 1225 Rosario - Santa Fe<br>will be here</p>
-                       </li>
+                       <li> 
+                            <i class="fa fa-map-marker"></i>
+                            <p>1425 Los Polvorines, Provincia de Buenos Aires </br> Argentina</p>
+                        </li>
                        <li>
                            <i class="fa fa-phone"></i>
                            <p><a href="#">+54 11 5719 9026</a><a href="#">+54 11 2359 2865</a></p>
@@ -199,15 +206,15 @@
                    </ul>
                </div>
 
-               <div class="contact-form-wrap col-md-6 col-12 mb-40">
-                   <h3>Leave a Message</h3>
+               <div class="contact-form-wrap col-md-6 col-12 mb-40" data-aos="zoom-in-left">
+                   <h3>Deja un mensaje</h3>
                    <form  id="contact-form" action="assets/php/mail.php" method="post">
                        <div class="contact-form">
                            <div class="row">
-                               <div class="col-lg-6 col-12 mb-30"><input type="text" name="con_name" placeholder="Your Name"></div>
-                               <div class="col-lg-6 col-12 mb-30"><input type="email" name="con_email" placeholder="Email Address"></div>
+                               <div class="col-lg-6 col-12 mb-30"><input type="text" name="con_name" placeholder="Naruto Uzumaki"></div>
+                               <div class="col-lg-6 col-12 mb-30"><input type="email" name="con_email" placeholder="naruto@******.com"></div>
                                <div class="col-12 mb-30"><textarea name="con_message" placeholder="Message"></textarea></div>
-                               <div class="col-12"><input type="submit" value="send"></div>
+                               <div class="col-12"><input type="submit" value="enviar"></div>
                            </div>
                        </div>
                    </form>
@@ -225,27 +232,27 @@
                 <div class="brand-slider">
 
                     <div class="brand-item col">
-                        <img src="assets/images/brands/brand-1.png" alt="">
+                        <img src="" alt="">
                     </div>
 
                     <div class="brand-item col">
-                        <img src="assets/images/brands/brand-2.png" alt="">
+                        <img src="" alt="">
                     </div>
 
                     <div class="brand-item col">
-                        <img src="assets/images/brands/brand-3.png" alt="">
+                        <img src="" alt="">
                     </div>
 
                     <div class="brand-item col">
-                        <img src="assets/images/brands/brand-4.png" alt="">
+                        <img src="" alt="">
                     </div>
 
                     <div class="brand-item col">
-                        <img src="assets/images/brands/brand-5.png" alt="">
+                        <img src="" alt="">
                     </div>
 
                     <div class="brand-item col">
-                        <img src="assets/images/brands/brand-6.png" alt="">
+                        <img src="" alt="">
                     </div>
 
                 </div>
@@ -259,18 +266,18 @@
             <div class="row mbn-40">
 
                 <div class="footer-widget col-lg-3 col-md-6 col-12 mb-40">
-                    <h4 class="title">CONTACT US</h4>
-                    <p>You address will be here<br/> Lorem Ipsum text</p>
+                    <h4 class="title">CONTACTANOS</h4>
+                    <p>1425 Los Polvorines Provincia de Buenos Aires </br> Argentina </p>
                     <p><a href="tel:01234567890">01234 567 890</a><a href="tel:01234567891">01234 567 891</a></p>
-                    <p><a href="mailto:info@example.com">info@example.com</a><a href="#">www.example.com</a></p>
+                    <p><a href="mailto:origamiTeam@origami.com">origamiteam@origami.com</a><a href="#">www.origami.com</a></p>
                 </div>
 
                 <div class="footer-widget col-lg-3 col-md-6 col-12 mb-40">
-                    <h4 class="title">PRODUCTS</h4>
+                    <h4 class="title">PRODUCTOS</h4>
                     <ul>
-                        <li><a href="#">New Arrivals</a></li>
-                        <li><a href="#">Best Seller</a></li>
-                        <li><a href="#">Trendy Items</a></li>
+                        <li><a href="#">Ropa</a></li>
+                        <li><a href="#">Mas Vendidos</a></li>
+                        <li><a href="#">Cosplay</a></li>
                         <li><a href="#">Best Deals</a></li>
                         <li><a href="#">On Sale Products</a></li>
                         <li><a href="#">Featured Products</a></li>
@@ -278,23 +285,23 @@
                 </div>
 
                 <div class="footer-widget col-lg-3 col-md-6 col-12 mb-40">
-                    <h4 class="title">INFORMATION</h4>
+                    <h4 class="title">INFORMACION</h4>
                     <ul>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Payment Method</a></li>
-                        <li><a href="#">Product Warranty</a></li>
-                        <li><a href="#">Return Process</a></li>
-                        <li><a href="#">Payment Security</a></li>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Terms & Condiciones</a></li>
+                        <li><a href="#">Metodos de Pago</a></li>
+                        <li><a href="#">Garantia</a></li>
+                        <li><a href="#">Proceso de devolución</a></li>
+                        <li><a href="#">Seguridad de pagos</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-widget col-lg-3 col-md-6 col-12 mb-40">
                     <h4 class="title">NEWSLETTER</h4>
-                    <p>Subscribe our newsletter and get all update of our product</p>
+                    <p>Suscríbase a nuestro boletín de noticias y reciba todas las actualizaciones de nuestros productos</p>
 
                     <form id="mc-form" class="mc-form footer-subscribe-form">
-                        <input id="mc-email" autocomplete="off" placeholder="Enter your email here" name="EMAIL" type="email">
+                        <input id="mc-email" autocomplete="off" placeholder="Ingresa tu email" name="EMAIL" type="email">
                         <button id="mc-submit"><i class="fa fa-paper-plane-o"></i></button>
                     </form>
                     <!-- mailchimp-alerts Start -->
@@ -304,8 +311,8 @@
                         <div class="mailchimp-error"></div><!-- mailchimp-error end -->
                     </div><!-- mailchimp-alerts end -->
 
-                    <h5>FOLLOW US</h5> 
-                    <p class="footer-social"><a href="#">Facebook</a> - <a href="#">Twitter</a> - <a href="#">Google+</a></p>
+                    <h5>SIGUENOS</h5> 
+                    <p class="footer-social"><a href="https://www.instagram.com/origami.anime/">Facebook</a> - <a href="#">Instagram</a> - <a href="#">Google+</a></p>
 
                 </div>
 
@@ -324,21 +331,29 @@
         </div>
     </div><!-- Footer Bottom Section End -->
 
+
+</div>
 </div>
 
-<!-- JS
-============================================ -->
-
+<!-- JS=========================================== -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/vue@3"></script>
 <!-- jQuery JS -->
 <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
 <!-- Migrate JS -->
-<script src="assets/js/vendor/jquery-migrate-3.3.2.min.js"></script>
+<!-- <script src="assets/js/vendor/jquery-migrate-3.3.2.min.js"></script> -->
 <!-- Bootstrap JS -->
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 <!-- Plugins JS -->
 <script src="assets/js/plugins.js"></script>
 <!-- Main JS -->
 <script src="assets/js/main.js"></script>
+<script src="assets/js/index.js"></script>
+<!-- Modernizer JS -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 
 </body>
 

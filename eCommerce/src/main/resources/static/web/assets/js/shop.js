@@ -32,7 +32,7 @@ Vue.createApp({
                 this.products.slice(0,13)
             }if(this.showProducts ==16){
                 this.products.slice(0,21)
-            }els{
+            }else{
                 this.products.slice(0,21)
             }
         }

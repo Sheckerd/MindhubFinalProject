@@ -17,21 +17,14 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-<<<<<<< HEAD
-        http.authorizeRequests()
-               .antMatchers("/**").permitAll();
-//                .antMatchers("/rest/**", "/h2-console/**", "/admin/**").hasAuthority("ADMIN")
-//                .antMatchers("/web/**", "/web/styles/**", "/web/sources/**", "/web/assets/**").permitAll();
-=======
+           http.authorizeRequests()
 
-        http.authorizeRequests()
+            .antMatchers("/api/**", "/**").permitAll()
+            .antMatchers("/rest/**", "/h2-console/**", "/admin/**").hasAuthority("ADMIN")
+            .antMatchers("/web/**", "/web/styles/**", "/web/sources/**", "/web/assets/**").permitAll()
+           .antMatchers("/api/products/clothes").permitAll()
+           .antMatchers("/api/products/cosplay").permitAll();
 
-            .antMatchers("/api/**", "/**").permitAll();
-//            .antMatchers("/rest/**", "/h2-console/**", "/admin/**").hasAuthority("ADMIN")
-//            .antMatchers("/web/**", "/web/styles/**", "/web/sources/**", "/web/assets/**").permitAll()
-//            .antMatchers("/api/products/clothes").permitAll()
-//            .antMatchers("/api/products/cosplay").permitAll()
->>>>>>> c832c9e2c8db4c1b33ac81bf2a87bfc5ed7dc046
 
         http.formLogin()
                 .usernameParameter("email")

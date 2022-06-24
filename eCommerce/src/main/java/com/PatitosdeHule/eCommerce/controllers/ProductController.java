@@ -62,9 +62,9 @@ public class ProductController {
             return new ResponseEntity<>("Error: Product type doesn't match", HttpStatus.FORBIDDEN);
         } // Si el tipo de producto no coincide.
 
-        if(!cosplayDTO.getClothesSize().equals(ClothesSize.S) || !cosplayDTO.getClothesSize().equals(ClothesSize.M) || !cosplayDTO.getClothesSize().equals(ClothesSize.L) || !cosplayDTO.getClothesSize().equals(ClothesSize.XL) || !cosplayDTO.getClothesSize().equals(ClothesSize.XXL)){
-            return new ResponseEntity<>("Error: missing product size", HttpStatus.FORBIDDEN);
-        } // Si falta talle del producto.
+    //    if(!cosplayDTO.getClothesSize().equals(ClothesSize.S) || !cosplayDTO.getClothesSize().equals(ClothesSize.M) || !cosplayDTO.getClothesSize().equals(ClothesSize.L) || !cosplayDTO.getClothesSize().equals(ClothesSize.XL) || !cosplayDTO.getClothesSize().equals(ClothesSize.XXL)){
+    //        return new ResponseEntity<>("Error: missing product size", HttpStatus.FORBIDDEN);
+     //   } // Si falta talle del producto.
 
         if (cosplayDTO.getStock() <= 0){
             return new ResponseEntity<>("Error: Product stock is 0 or less", HttpStatus.FORBIDDEN);
@@ -73,6 +73,9 @@ public class ProductController {
         if (cosplayDTO.getPrice() <= 0){
             return new ResponseEntity<>("Error: Product price is 0 or less", HttpStatus.FORBIDDEN);
         } // Si el tipo de producto no coincide.
+
+        Product newCosplay = new Product(cosplayDTO.getName(), cosplayDTO.getDescription(), cosplayDTO.getImageURL_front(),cosplayDTO.getAnimeTheme(), cosplayDTO.isLimitedEdition(), cosplayDTO.getProductType(),cosplayDTO.getClothesSize(),cosplayDTO.getStock(), cosplayDTO.getPrice());
+        productService.saveProduct(newCosplay);
 
 
             return new ResponseEntity<>(HttpStatus.CREATED);

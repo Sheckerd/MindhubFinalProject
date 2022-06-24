@@ -4,7 +4,7 @@ import com.PatitosdeHule.eCommerce.models.Client;
 
 public class ClientDTO {
 
-    private Long id;
+    private long id;
     private String name;
     private String lastName;
     private String email;
@@ -15,6 +15,7 @@ public class ClientDTO {
     }
 
     public ClientDTO(Client client) {
+        this.id = client.getId();
         this.name = client.getName();
         this.lastName = client.getLastName();
         this.email = client.getEmail();
@@ -22,7 +23,7 @@ public class ClientDTO {
         this.cellPhone = client.getCellPhone();
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 

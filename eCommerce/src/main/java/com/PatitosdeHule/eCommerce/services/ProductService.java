@@ -14,6 +14,7 @@ public interface ProductService {
     void saveProduct(Product product);
     Set<ClothesDTO> getClothesDTO();
     Set<CosplayDTO> getCosplayDTO();
+    Set<ProductDTO> getProductsDTO();
 
 
 

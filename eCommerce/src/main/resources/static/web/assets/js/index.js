@@ -21,9 +21,7 @@ Vue.createApp({
 
     methods:{
         limitedEdition(){
-            this.productsLimitedEdition = this.products.filter(){
-                
-            }
+            this.productsLimitedEdition = this.products.filter(product => product.limitedEdition)
         }
     },
 

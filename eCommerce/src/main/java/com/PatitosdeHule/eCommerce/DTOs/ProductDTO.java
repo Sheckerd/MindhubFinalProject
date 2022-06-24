@@ -5,6 +5,13 @@ import com.PatitosdeHule.eCommerce.models.ClothesType;
 import com.PatitosdeHule.eCommerce.models.Product;
 import com.PatitosdeHule.eCommerce.models.ProductType;
 
+<<<<<<< HEAD
+=======
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+>>>>>>> f975ab44af898c8f1b630a8f63e004e3368e22eb
 public class ProductDTO {
 
     private long id;
@@ -20,6 +27,10 @@ public class ProductDTO {
     private ClothesSize clothesSize;
     private int stock;
     private double price;
+<<<<<<< HEAD
+=======
+    private Set<ArticleDTO> articleDTOSet = new HashSet<>();
+>>>>>>> f975ab44af898c8f1b630a8f63e004e3368e22eb
 
     public ProductDTO() {
     }
@@ -38,6 +49,10 @@ public class ProductDTO {
         this.clothesSize = product.getClothesSize();
         this.stock = product.getStock();
         this.price = product.getPrice();
+<<<<<<< HEAD
+=======
+        this.articleDTOSet = product.getArticles().stream().map(article -> new ArticleDTO(article)).collect(Collectors.toSet());
+>>>>>>> f975ab44af898c8f1b630a8f63e004e3368e22eb
     }
 
     public long getId() {
@@ -139,4 +154,12 @@ public class ProductDTO {
     public void setPrice(double price) {
         this.price = price;
     }
+<<<<<<< HEAD
 }
+=======
+
+    public Set<ArticleDTO> getArticleDTOSet() {
+        return articleDTOSet;
+    }
+}
+>>>>>>> f975ab44af898c8f1b630a8f63e004e3368e22eb

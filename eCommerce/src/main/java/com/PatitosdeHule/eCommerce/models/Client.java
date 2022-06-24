@@ -1,10 +1,10 @@
 package com.PatitosdeHule.eCommerce.models;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Client {
@@ -20,7 +20,7 @@ public class Client {
     private String email;
     private String password;
     private String cellPhone;
-
+    
     public Client(){}
 
     public Client(String name, String lastName, String email, String password, String cellPhone) {
@@ -76,4 +76,6 @@ public class Client {
     public void setCellPhone(String cellPhone) {
         this.cellPhone = cellPhone;
     }
+    
+    
 }

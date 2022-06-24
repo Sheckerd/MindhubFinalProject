@@ -40,5 +40,9 @@ public class ProductServiceImplement implements ProductService {
         return productRepository.findAll().stream().map(product -> new ProductDTO(product)).collect(Collectors.toSet());
     }
 
+    @Override
+    public ProductDTO getProductById(long id) {
+        return new ProductDTO(productRepository.findById(id).orElse(null));
+    }
 
 }

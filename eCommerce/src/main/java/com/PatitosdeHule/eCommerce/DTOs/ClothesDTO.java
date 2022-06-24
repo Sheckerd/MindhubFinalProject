@@ -5,11 +5,13 @@ import com.PatitosdeHule.eCommerce.models.ClothesType;
 import com.PatitosdeHule.eCommerce.models.Product;
 import com.PatitosdeHule.eCommerce.models.ProductType;
 
+import java.util.List;
+
 public class ClothesDTO {
 
     private long id;
     private String name;
-    private String color;
+    private List<String> colors;
     private String description;
     private String imageURL_front;
     private String imageURL_back;
@@ -27,7 +29,7 @@ public class ClothesDTO {
 
         this.id = product.getId();
         this.name = product.getName();
-        this.color = product.getColor();
+        this.colors = product.getColor();
         this.description = product.getDescription();
         this.imageURL_front = product.getImageURL_front();
         this.imageURL_back = product.getImageURL_back();
@@ -47,7 +49,7 @@ public class ClothesDTO {
 
     public String getName() {return name;}
 
-    public String getColor() {return color;}
+    public List<String> getColors() {return colors;}
 
     public String getDescription() {return description;}
 

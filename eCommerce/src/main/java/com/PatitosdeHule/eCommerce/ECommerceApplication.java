@@ -11,6 +11,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import java.util.List;
+
 
 @SpringBootApplication
 public class ECommerceApplication {
@@ -46,13 +48,13 @@ public class ECommerceApplication {
 
 
             //Clothes
-            Product clotheBNHA = new Product("Remera Izuki", "verde/c negro", "Una remera muito delicia mmmmmm", "https://d3ugyf2ht6aenh.cloudfront.net/stores/830/660/products/zt-0686-frente-9744de8f9c1d9597e116038240713155-1024-1024.jpg", "https://d3ugyf2ht6aenh.cloudfront.net/stores/830/660/products/zt-0686-frente-9744de8f9c1d9597e116038240713155-1024-1024.jpg", "BNHA", ClothesType.T_SHIRT, false, ProductType.CLOTHES, ClothesSize.S, 17, 250);
+            Product clotheBNHA = new Product("Remera Izuki", List.of("black", "green", "white"), "Una remera muito delicia mmmmmm", "https://d3ugyf2ht6aenh.cloudfront.net/stores/830/660/products/zt-0686-frente-9744de8f9c1d9597e116038240713155-1024-1024.jpg", "https://d3ugyf2ht6aenh.cloudfront.net/stores/830/660/products/zt-0686-frente-9744de8f9c1d9597e116038240713155-1024-1024.jpg", "BNHA", ClothesType.T_SHIRT, false, ProductType.CLOTHES, ClothesSize.S, 17, 250);
             productService.saveProduct(clotheBNHA);
 
-            Product clotheHoodie = new Product("Hoodie Origami", "Gris", "Un hoodie muito delicioso mmmmmm", "https://d3ugyf2ht6aenh.cloudfront.net/stores/830/660/products/zt-0686-frente-9744de8f9c1d9597e116038240713155-1024-1024.jpg", "https://d3ugyf2ht6aenh.cloudfront.net/stores/830/660/products/zt-0686-frente-9744de8f9c1d9597e116038240713155-1024-1024.jpg", "Origami", ClothesType.HOODIE, false, ProductType.CLOTHES, ClothesSize.L, 17, 250);
+            Product clotheHoodie = new Product("Hoodie Origami", List.of("Gris"), "Un hoodie muito delicioso mmmmmm", "https://d3ugyf2ht6aenh.cloudfront.net/stores/830/660/products/zt-0686-frente-9744de8f9c1d9597e116038240713155-1024-1024.jpg", "https://d3ugyf2ht6aenh.cloudfront.net/stores/830/660/products/zt-0686-frente-9744de8f9c1d9597e116038240713155-1024-1024.jpg", "Origami", ClothesType.HOODIE, false, ProductType.CLOTHES, ClothesSize.L, 17, 250);
             productService.saveProduct(clotheHoodie);
 
-             Product clotheHoodiePsycho = new Product("Hoodie Psycho", "Black", "Un hoodie muito delicioso mmmmmm", "https://d3ugyf2ht6aenh.cloudfront.net/stores/830/660/products/zt-0686-frente-9744de8f9c1d9597e116038240713155-1024-1024.jpg", "https://d3ugyf2ht6aenh.cloudfront.net/stores/830/660/products/zt-0686-frente-9744de8f9c1d9597e116038240713155-1024-1024.jpg", "Origami", ClothesType.HOODIE, false, ProductType.CLOTHES, ClothesSize.L, 17, 250);
+             Product clotheHoodiePsycho = new Product("Hoodie Psycho", List.of("Black"), "Un hoodie muito delicioso mmmmmm", "https://d3ugyf2ht6aenh.cloudfront.net/stores/830/660/products/zt-0686-frente-9744de8f9c1d9597e116038240713155-1024-1024.jpg", "https://d3ugyf2ht6aenh.cloudfront.net/stores/830/660/products/zt-0686-frente-9744de8f9c1d9597e116038240713155-1024-1024.jpg", "Origami", ClothesType.HOODIE, false, ProductType.CLOTHES, ClothesSize.L, 17, 250);
              productService.saveProduct(clotheHoodiePsycho);
 
 

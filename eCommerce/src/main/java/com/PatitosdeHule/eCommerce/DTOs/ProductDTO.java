@@ -6,6 +6,7 @@ import com.PatitosdeHule.eCommerce.models.Product;
 import com.PatitosdeHule.eCommerce.models.ProductType;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -13,7 +14,7 @@ public class ProductDTO {
 
     private long id;
     private String name;
-    private String color;
+    private List<String> colors;
     private String description;
     private String imageURL_front;
     private String imageURL_back;
@@ -32,7 +33,7 @@ public class ProductDTO {
     public ProductDTO(Product product) {
         this.id = product.getId();
         this.name = product.getName();
-        this.color = product.getColor();
+        this.colors = product.getColor();
         this.description = product.getDescription();
         this.imageURL_front = product.getImageURL_front();
         this.imageURL_back = product.getImageURL_back();
@@ -58,12 +59,12 @@ public class ProductDTO {
         this.name = name;
     }
 
-    public String getColor() {
-        return color;
+    public List<String> getColor() {
+        return colors;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public void setColor(List<String> color) {
+        this.colors = color;
     }
 
     public String getDescription() {

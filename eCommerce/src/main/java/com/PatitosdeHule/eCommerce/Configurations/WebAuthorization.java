@@ -21,21 +21,13 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
 
-<<<<<<< HEAD
-            .antMatchers("/api/**", "/**").permitAll()
-                           .antMatchers(HttpMethod.POST, "/api/**").permitAll()
-        //    .antMatchers("/rest/**", "/h2-console/**", "/admin/**").hasAuthority("ADMIN")
-            .antMatchers("/web/**", "/web/styles/**", "/web/sources/**", "/web/assets/**").permitAll()
+           .antMatchers("/api/**", "/**").permitAll()
+           .antMatchers(HttpMethod.POST, "/api/**").permitAll()
+           .antMatchers("/web/**", "/web/styles/**", "/web/sources/**", "/web/assets/**").permitAll()
            .antMatchers("/api/products/clothes").permitAll()
            .antMatchers("/api/products/cosplay").permitAll();
-=======
-                .antMatchers("/api/**", "/**").permitAll()
-                .antMatchers(HttpMethod.POST, "/api/**").permitAll();
-//                .antMatchers("/rest/**", "/h2-console/**", "/admin/**").hasAuthority("ADMIN")
-//                .antMatchers("/web/**", "/web/styles/**", "/web/sources/**", "/web/assets/**").permitAll()
-     //          .antMatchers("/api/products/clothes").permitAll()
-        //      .antMatchers("/api/products/cosplay").permitAll();
->>>>>>> f975ab44af898c8f1b630a8f63e004e3368e22eb
+
+
 
 
         http.formLogin()

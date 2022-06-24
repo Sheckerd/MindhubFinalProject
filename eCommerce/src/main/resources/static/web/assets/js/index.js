@@ -2,7 +2,7 @@ Vue.createApp({
     data() {
         return {
             products: [],
-            productsLimitedEdition: [],
+            productsLimitedEdition: []
         }
     },
 
@@ -10,23 +10,23 @@ Vue.createApp({
     created(){
         axios.get(`/api/products`)
         .then(result =>{
-            this.products = result.data
+            this.products = result.data.slice(0,10)
             console.log(this.products)
 
-            // console.log(this.products[0].clothesSize)
+            //console.log(this.products[0].clothesSize)
            
             }
         )
     },
 
     methods:{
-        limitedEdition(){
-            this.productsLimitedEdition = this.products.filter(product => product.limitedEdition)
-        }
     },
-
+    
     computed: {
-
+        
+        limitedEdition(){
+            this.productsLimitedEdition = this.products.filter(product => product.limitedEdition).slice(0,6)
+        }
 
 
     }

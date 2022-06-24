@@ -28,10 +28,7 @@ public class ProductController {
     @Autowired
     ClientService clientService;
 
-<<<<<<< HEAD
-=======
 
->>>>>>> f975ab44af898c8f1b630a8f63e004e3368e22eb
     @GetMapping("/products")
     public Set<ProductDTO> getProductsDTO(){
         return productService.getProductsDTO();

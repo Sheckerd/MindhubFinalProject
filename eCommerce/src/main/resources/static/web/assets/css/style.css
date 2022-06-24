@@ -569,6 +569,7 @@ img.mfp-img {
 .page-banner-section {
   padding: 100px 0;
   background-size: cover;
+  background-image:url("https://http2.mlstatic.com/D_NQ_NP_671269-MLA49303428875_032022-OO.jpg");
   background-position: center center;
   position: relative;
   z-index: 1;
@@ -581,8 +582,11 @@ img.mfp-img {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background-color: #94c7eb;
-  opacity: 0.8;
+  /* background-color: #94c7eb; */
+  /* background-image:url("https://http2.mlstatic.com/D_NQ_NP_671269-MLA49303428875_032022-OO.jpg"); */
+  background-position:center;
+  background-size:cover";
+  /* opacity: 0.8; */
 }
 @media only screen and (max-width: 767px) {
   .page-banner-section {

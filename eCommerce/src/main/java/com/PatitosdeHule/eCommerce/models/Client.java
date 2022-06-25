@@ -15,6 +15,9 @@ public class Client {
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
 
+    @OneToMany(mappedBy="client", fetch= FetchType.EAGER)
+    private Set<Invoice> invoices = new HashSet();
+
     private String name;
     private String lastName;
     private String email;
@@ -77,5 +80,10 @@ public class Client {
         this.cellPhone = cellPhone;
     }
     
+    public Set<Invoice> getInvoices() {return invoices;}
     
+    public void addAccount (Invoice invoice) {
+        invoice.setClient(this);
+        invoices.add(invoice);
+    }
 }

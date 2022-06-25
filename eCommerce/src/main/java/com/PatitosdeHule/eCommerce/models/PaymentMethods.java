@@ -5,6 +5,6 @@ public enum PaymentMethods {
     CREDIT,
     DEBIT,
     CASH,
-    TRANSFER
+    TRANSFER;
 
 }

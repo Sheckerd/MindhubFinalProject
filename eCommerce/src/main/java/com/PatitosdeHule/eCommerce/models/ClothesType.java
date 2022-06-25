@@ -7,6 +7,6 @@ public enum ClothesType {
     HOODIE,
     SNEAKER,
     DRESS,
-    SKIRT
+    SKIRT;
 
 }

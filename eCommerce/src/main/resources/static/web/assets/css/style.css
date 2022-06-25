@@ -6363,8 +6363,9 @@ img.mfp-img {
 /*  17. Footer CSS
 /*----------------------------------------*/
 .footer-top-section {
-  background-image: url(../images/pattern/pattern-dot.png);
-  background-repeat: repeat;
+  /* background-color: #333; */
+  background-image: url("https://static.wikia.nocookie.net/ninjaskonoha/images/9/91/Konoha.png/revision/latest?cb=20130209222750&path-prefix=es");
+  background-repeat: no-repeat;
 }
 
 /*-- Footer Widget --*/
@@ -6383,7 +6384,7 @@ img.mfp-img {
   margin-bottom: 32px;
 }
 .footer-widget .title::before {
-  background-color: #94c7eb;
+  /* background-color: #94c7eb; */
   position: absolute;
   left: 0;
   bottom: 0;

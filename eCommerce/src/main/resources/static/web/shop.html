@@ -136,7 +136,8 @@
                                     <li class="active"><a href="shop.html">SHOP</a>
                                         <ul class="sub-menu">
                                             <li class="active"><a href="shop.html">Shop</a></li>
-                                            <li><a href="single-product.html">Single Product</a></li>
+                                            <li><a href="ropa.html">Ropa</a></li>
+                                            <li><a href="cosplays.html">Cosplays</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="contact.html">CONTACTO</a></li>
@@ -177,28 +178,38 @@
 
             <div class="row">
 
+                <!-- {{showProductsSelect}} -->
                 <div class="col-12">
                     <div class="product-show">
                         <h4>Show:</h4>
-                        <select class="nice-select" v-model="showProducts">
+                        <select class="nice-select" v-model="showProduct">
                             <option value="8">8</option>
                             <option value="12">12</option>
                             <option value="16">16</option>
                             <option value="20">20</option>
                         </select>
                     </div>
+                    
+                    <div>
+                        {{searchProduct}}
+                        <label for="search">Buscar Productos:</label>
+                        <input type="search" id="search" name="search" v-model="search">
+                    </div>
+                        <!-- {{sortBy}} -->
                     <div class="product-short">
                         <h4>Ordenar por:</h4>
-                        <select class="nice-select">
-                            <option>Menor Precio</option>
-                            <option>Mayor Precio</option>
-                            <option>Menor Stock</option>
-                            <option>Mayor Stock</option>
+                        
+                        <select class="nice-select" v-model="sort">
+                            <option value="minPrice">Menor Precio</option>
+                            <option value="maxPrice">Mayor Precio</option>
+                            <option value="minStock">Menor Stock</option>
+                            <option value="maxStock">Mayor Stock</option>
                         </select>
                     </div>
                 </div>
+                
 
-                <div class="col-xl-3 col-lg-4 col-md-6 col-12 mb-40" v-for="product in products">
+                <div class="col-xl-3 col-lg-4 col-md-6 col-12 mb-40" v-for="product in aux">
 
                     <div class="product-item">
                         <div class="product-inner">

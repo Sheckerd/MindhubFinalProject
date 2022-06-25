@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -78,8 +78,8 @@
                         <!-- Header Shop Links Start -->
                         <div class="header-top-right">
 
-                            <p><a href="my-account.html">My Account</a></p>
-                            <p><a href="login-register.html">Register</a><a href="login-register.html">Login</a></p>
+                            <p><a href="my-account.html">Mi Cuenta</a></p>
+                            <p><a href="login-register.html">Registro</a><a href="login-register.html">Login</a></p>
 
                         </div><!-- Header Shop Links End -->
                     </div>
@@ -131,15 +131,15 @@
                         <div class="main-menu">
                             <nav>
                                 <ul>
-                                    <li class="active"><a href="index.html">HOME</a>
+                                    <li class="active"><a href="index.html">INICIO</a>
                                     </li>
-                                    <li><a href="shop.html">SHOP</a>
+                                    <li><a href="shop.html">TIENDA</a>
                                         <ul class="sub-menu">
-                                            <li><a href="shop.html">Shop</a></li>
+                                            <li><a href="shop.html">Productos</a></li>
 											<li><a href="single-product.html">Cosplay</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="contact.html">CONTACT</a></li>
+                                    <li><a href="contact.html">CONTACTO</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -229,7 +229,7 @@
 													<span>{{product.clothesSize}}</span>
 													 <!-- <span>S</span><span>M</span><span>L</span><span>XL</span> -->
 												</h5>
-												<h5 v-if="product.color != null" style="display: inline;" class="color">
+												<h5 v-if="product.color.length == 0" style="display: inline;" class="color">
 													Color: 
 													<div class=" d-flex flex-row">
 														<span v-if="product.color.includes('black')" style="background-color: #000000"></span>
@@ -656,8 +656,8 @@
                         <a href="#" class="image"><img src="assets/images/banner/banner-1.jpg" alt="Banner Image"></a>
 
                         <div class="content">
-                            <h1>New Arrival <br>Baby’s Shoe <br>GET 30% OFF</h1>
-                            <a href="#" data-hover="SHOP NOW">SHOP NOW</a>
+                            <h1>Nueva Mercancia<br>Attack On Tittan <br> 30% de Descuento</h1>
+                            <a href="#" data-hover="SHOP NOW">Checar</a>
                         </div>
 
                     </div>
@@ -669,8 +669,8 @@
                         <a href="#" class="image"><img src="assets/images/banner/banner-3.jpg" alt="Banner Image"></a>
 
                         <div class="content">
-                            <h1>Trendy <br>Collections</h1>
-                            <a href="#" data-hover="SHOP NOW">SHOP NOW</a>
+                            <h1>Sueteres <br>Coleccion</h1>
+                            <a href="#" data-hover="SHOP NOW">Checar</a>
                         </div>
 
                     </div>
@@ -691,7 +691,7 @@
 				</div>
 			</div>
 			{{limitedEdition}}
-			<div class="product-slider slick-space d-flex justify-content-between">
+			<div class="product-slider slick-space">
 				<div class="slick-slide">
 
 					<div class="product-item" >
@@ -702,8 +702,8 @@
 
 								<div class="image-overlay">
 									<div class="action-buttons">
-										<button>add to cart</button>
-										<button>add to wishlist</button>
+										<button>Agregar al carrito</button>
+										<button>Guardar en favoritos</button>
 									</div>
 								</div>
 
@@ -723,7 +723,7 @@
 										<span>{{product.clothesSize}}</span>
 										 <!-- <span>S</span><span>M</span><span>L</span><span>XL</span> -->
 									</h5>
-									<h5 v-if="product.color != null" style="display: inline;" class="color">
+									<h5 v-if="product.color.length == 0 " style="display: inline;" class="color">
 										Color: 
 										<div class=" d-flex flex-row">
 											<span v-if="product.color.includes('black')" style="background-color: #000000"></span>
@@ -762,19 +762,19 @@
 				<div class="deal-product mbn-30">
 					<div class="image col-md-4 col-12 mb-30"><img src="assets/images/product/deal-1.png" alt="Image"></div>
 					<div class="content col-md-6 col-12 mb-30">
-						<h2 class="title"><a href="single-product.html">2 Piece Shirt Set</a></h2>
-						<span class="price">$13 <span class="old">$28</span></span>
+						<h2 class="title"><a href="single-product.html">2 sets de Cosplays</a></h2>
+						<span class="price">$5000 <span class="old">$8900</span></span>
 						<div class="countdown" data-countdown="2023/06/20"></div>
-						<a class="shop-now-link" href="single-product.html" data-hover="SHOP NOW">SHOP NOW</a>
+						<a class="shop-now-link" href="single-product.html" data-hover="SHOP NOW">Comprar Ahora</a>
 					</div>
 				</div>
 				<div class="deal-product mbn-30">
 					<div class="image col-md-4 col-12 mb-30"><img src="assets/images/product/deal-2.png" alt="Image"></div>
 					<div class="content col-md-6 col-12 mb-30">
-						<h2 class="title"><a href="single-product.html">Kelly Shirt Set</a></h2>
+						<h2 class="title"><a href="single-product.html">Naruto</a></h2>
 						<span class="price">$08 <span class="old">$25</span></span>
 						<div class="countdown" data-countdown="2023/06/20"></div>
-						<a class="shop-now-link" href="single-product.html" data-hover="SHOP NOW">SHOP NOW</a>
+						<a class="shop-now-link" href="single-product.html" data-hover="SHOP NOW">Comprar Ahora</a>
 					</div>
 				</div>
 			</div>
@@ -861,15 +861,25 @@
                     </div>
 
                     <div class="brand-item col">
-                        <img src="assets/images/brands/riot-games-logo.png" alt="Image">
+                        <img src="assets/images/brands/bandai_Logo.png" alt="Image">
                     </div>
+
+					<div class="brand-item col">
+                        <img src="assets/images/brands/banpresto_logo.png" alt="Image">
+                    </div>
+
+					<div class="brand-item col">
+                        <img src="assets/images/brands/just_toys.png" alt="Image">
+                    </div>
+
+
                 </div>
             </div>
         </div>
     </div><!-- Brand Section End -->
 
     <!-- Footer Top Section Start -->
-    <div class="footer-top-section bg-theme-two-light section section-padding">
+    <div class="footer-top-section section section-padding">
         <div class="container">
             <div class="row">
 

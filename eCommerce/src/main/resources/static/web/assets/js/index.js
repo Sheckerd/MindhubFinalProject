@@ -10,10 +10,10 @@ Vue.createApp({
     created(){
         axios.get(`/api/products`)
         .then(result =>{
-            this.products = result.data.slice(0,10)
+            this.products = result.data.slice(0,9)
             console.log(this.products)
 
-            //console.log(this.products[0].clothesSize)
+           
            
             }
         )
@@ -25,7 +25,8 @@ Vue.createApp({
     computed: {
         
         limitedEdition(){
-            this.productsLimitedEdition = this.products.filter(product => product.limitedEdition).slice(0,6)
+            this.productsLimitedEdition = this.products.filter(product => product.limitedEdition == true)
+            this.productsLimitedEdition = this.productsLimitedEdition.slice(0,5)
         }
 
 

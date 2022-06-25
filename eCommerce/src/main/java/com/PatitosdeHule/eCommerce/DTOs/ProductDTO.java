@@ -47,7 +47,6 @@ public class ProductDTO {
         this.clothesSize = product.getClothesSize();
         this.stock = product.getStock();
         this.price = product.getPrice();
-
         this.articleDTOSet = product.getArticles().stream().map(article -> new ArticleDTO(article)).collect(Collectors.toSet());
     }
 

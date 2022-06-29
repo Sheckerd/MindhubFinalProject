@@ -1,0 +1,276 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Origami - Tienda de ropa</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+
+    <!-- CSS
+	============================================ -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- Icon Font CSS -->
+    <link rel="stylesheet" href="assets/css/icon-font.min.css">
+
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="assets/css/plugins.css">
+
+    <!-- Helper CSS -->
+    <link rel="stylesheet" href="assets/css/helper.css">
+
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Modernizer JS -->
+    <script src="assets/js/vendor/modernizr-3.11.2.min.js"></script>
+
+    <!-- AOS Style CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+
+    <div id="app">
+
+        <!-- Header Section Start -->
+        <div class="header-section section">
+
+            <!-- Header Top Start -->
+            <div class="header-top header-top-one bg-theme-two">
+                <div class="container-fluid">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col mt-10 mb-10 d-none d-md-flex">
+                            <!-- Header Top Left Start -->
+                            <div class="header-top-left">
+                                <p>Bienvenido a Origami</p>
+                            </div><!-- Header Top Left End -->
+                        </div>
+                        <div class="col mt-10 mb-10">
+                            <!-- Header Language Currency Start -->
+                            <ul class="header-lan-curr">
+                                <li><a href="#">eng</a>
+                                    <ul>
+                                        <li><a href="#">english</a></li>
+                                        <li><a href="#">spanish</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">$usd</a>
+                                    <ul>
+                                        <li><a href="#">dollar</a></li>
+                                    </ul>
+                                </li>
+                            </ul><!-- Header Language Currency End -->
+                        </div>
+                        <div class="col mt-10 mb-10">
+                            <!-- Header Shop Links Start -->
+                            <div class="header-top-right">
+                                <p><a href="login-register.html">Registro</a><a href="login-register.html">Login</a></p>
+                            </div><!-- Header Shop Links End -->
+                        </div>
+                    </div>
+                </div>
+            </div><!-- Header Top End -->
+            <!-- Header Bottom Start -->
+            <div class="header-bottom header-bottom-one header-sticky">
+                <div class="container-fluid">
+                    <div class="row menu-center align-items-center justify-content-between">
+                        <div class="col mt-15 mb-15">
+                            <!-- Logo Start -->
+                            <div class="header-logo">
+                                <a href="index.html">
+                                    <img src="assets/images/logo.png" alt="Jadusona">
+                                </a>
+                            </div><!-- Logo End -->
+                        </div>
+                        <div class="col order-2 order-lg-3">
+                            <!-- Header Advance Search Start -->
+                            <div class="header-shop-links">
+                                <div class="header-mini-cart">
+                                    <a href="cart.html"><img src="assets/images/icons/cart.png" alt="Cart">
+                                        <span>{{storageLength}}</span></a>
+                                </div>
+                            </div><!-- Header Advance Search End -->
+                        </div>
+                        <div class="col order-3 order-lg-2">
+                            <div class="main-menu">
+                                <nav>
+                                    <ul>
+                                        <li><a href="index.html">HOME</a>
+                                        </li>
+                                        <li><a href="shop.html">Tienda</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="shop.html">General</a></li>
+                                                <li><a href="ropa.html">Ropa</a></li>
+                                                <li><a href="cosplay.html">Cosplay</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="active"><a href="contact.html">Contactanos</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Menu -->
+                        <div class="mobile-menu order-4 d-block d-lg-none col"></div>
+                    </div>
+                </div>
+            </div><!-- Header BOttom End -->
+        </div><!-- Header Section End -->
+
+        <!-- Page Banner Section Start -->
+        <div class="page-banner-section section" style="background-image:url()">
+            <div class="container">
+                <div class="row">
+                    <div class="page-banner-content col">
+                        <h1>Login/Register</h1>
+                    </div>
+                </div>
+            </div>
+        </div><!-- Page Banner Section End -->
+
+        <!-- Page Section Start -->
+        <div class="page-section section section-padding" data-aos="zoom-in-left">
+            <div class="container">
+                <div class="row mbn-40">
+
+                    <div class="col-lg-4 col-12 mb-40">
+                        <div class="login-register-form-wrap">
+                            <h3>Login</h3>
+                            <form class="mb-30" @submit.prevent="postLogin()">
+                                <div class="row">
+                                    <div class="col-12 mb-15"><input type="text" placeholder="Username or Email"
+                                            v-model="mail"></div>
+                                    <div class="col-12 mb-15"><input type="password" placeholder="Contraseña"
+                                            v-model="password"></div>
+                                    <div class="col-12"><input type="submit" value="Login"></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-12 mb-40 text-center d-none d-lg-block">
+                        <span class="login-register-separator"></span>
+                    </div>
+
+                    <div class="col-lg-6 col-12 mb-40 ms-auto">
+                        <div class="login-register-form-wrap">
+                            <h3>Register</h3>
+                            <form @submit.prevent="postRegister()">
+                                <div class="row">
+                                    <div class="col-md-6 col-12 mb-15"><input type="text" placeholder="Nombre"
+                                            v-model="nameRegister"></div>
+                                    <div class="col-md-6 col-12 mb-15"><input type="text" placeholder="Your Last Name"
+                                            v-model="lastNameRegister"></div>
+                                    <div class="col-md-6 col-12 mb-15"><input type="email" placeholder="Email"
+                                            v-model="emailRegister"></div>
+                                    <div class="col-md-6 col-12 mb-15"><input type="password" placeholder="Contraseña"
+                                            v-model="passwordRegister"></div>
+                                    <div class="col-md-6 col-12 mb-15"><input type="number"
+                                            placeholder="Numero de Telefono" v-model="cellPhoneRegister"></div>
+                                    <div class="col-md-6 col-12"><input type="submit" value="Register"></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div><!-- Page Section End -->
+
+        <!-- Footer Top Section Start -->
+        <div class="footer-top-section section section-padding">
+            <div class="container">
+                <div class="row">
+
+                    <div class="footer-widget col-lg-3 col-md-6 col-12 mb-40 ">
+                        <h4 class="title">CONTACTO</h4>
+                        <p class="text-light">1425 Los Polvorines <br /> Provincia de Buenos Aires</p>
+                        <p> <a class="text-light" href="tel:2995451326">2995451326</a><a class="text-light"
+                                href="tel:2994137609">2994137609</a></p>
+                        <p> <a class="text-light" href="mailto:help@origami.com">help@origami.com</a><a
+                                class="text-light" href="#">www.origami.com</a></p>
+                    </div>
+
+                    <div class="footer-widget col-lg-3 col-md-6 col-12 mb-40">
+                        <h4 class="title text-light">PRODUCTOS</h4>
+                        <ul>
+                            <li><a class="text-light" href="ropa">Productos Destacados</a></li>
+                            <li><a class="text-light" href="cosplay.html">Cosplay Más vendidos</a></li>
+                            <!-- <li><a class="text-light" href="#">Productos Destacados</a></li> -->
+                            <li><a class="text-light" href="about.html">Sobre Nosotros</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- <div class="footer-widget col-lg-3 col-md-6 col-12 mb-40">
+						<h4 class="title">INFORMACIÓN</h4>
+                        <ul>
+                        <li><a href="#">Terminos y condiciones</a></li>
+                        <li><a href="#">Métodos de pago</a></li>
+                        <li><a href="#">Garantías</a></li>
+                        <li><a href="#">Devoluciones</a></li>
+                        <li><a href="#">Seguridad de los pagos</a></li>
+						</ul>
+					</div>	 -->
+
+                    <div class="footer-widget col-lg-3 col-md-6 col-12 mb-40">
+                        <h5 class="title text-light">SÍGUENOS!</h5>
+                        <p class="footer-social text text-light">
+                            <a class="text-light" href="https://www.instagram.com/origami.anime/"> <i
+                                    class="fa fa-instagram" aria-hidden="true"> </i> Instagram</a>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Footer Top Section End -->
+
+        <!-- Footer Bottom Section Start -->
+        <div class="footer-bottom-section section bg-theme-two pt-15 pb-15">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center">
+                        <p class="footer-copyright">© 2022 Origami. Hecho con <i class="fa fa-heart heart-icon"></i> By
+                            <a target="_blank" href="https://OrigamiTeam.com">OrigamiTeam</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Bottom Section End -->
+
+    </div>
+    </div>
+    <!-- JS
+============================================ -->
+    <script src="https://kit.fontawesome.com/8872e142cf.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- jQuery JS -->
+    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <!-- Migrate JS -->
+    <script src="assets/js/vendor/jquery-migrate-3.3.2.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Plugins JS -->
+    <script src="assets/js/plugins.js"></script>
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+    <!-- Js -->
+    <script src="assets/js/login-register.js"></script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

@@ -131,8 +131,7 @@ Vue.createApp({
                         localStorage.setItem("cart", JSON.stringify(this.storageCarrito));
 
                         setTimeout(function () {
-                            location.href="https://homebanking2.herokuapp.com/cardPayments/posnet.html"  
-                        }, 2000)
+                            location.href=`https://homebanking2.herokuapp.com/cardPayments/posnet.html?amount=${producto.subtotal}`;                        }, 2000)
                         
                     })
                 })

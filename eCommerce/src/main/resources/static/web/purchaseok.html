@@ -132,7 +132,7 @@
                                                     <li><a href="cosplay.html">Cosplay</a></li>
                                                 </ul>
                                             </li>
-                                            <li class="active"><a href="contact.html">CONTACTO</a></li>
+                                            <li><a href="contact.html">CONTACTO</a></li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -145,62 +145,18 @@
                 </div><!-- Header BOttom End -->
             </div><!-- Header Section End -->
 
-            <!-- Page Banner Section Start -->
-            <div class="page-banner-section section" style="background-image:url()">
-                <div class="container">
-                    <div class="row">
-                        <div class="page-banner-content col">
-                            <h1 class="txtShadow">Contactanos</h1>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Page Banner Section End -->
 
-            <!-- Page Section Start -->
-            <div class="page-section section section-padding mt-100">
-                <div class="container">
-                    <div class="row row-30 mbn-40">
-                        <div class="contact-info-wrap col-md-6 col-12 mb-40">
-                            <h3>Contactanos</h3>
-                            <p>Origami tiene una gran variedad de productos que puedes ver en nuestra tienda oficial.
-                                Además si eres cliente premium tendrás acceso a todo el nuevo catálogo que llega cada
-                                semana. Forma parte de la mayor comunidad otaku.</p>
-                            <ul class="contact-info">
-                                <li>
-                                    <i class="fa fa-map-marker"></i>
-                                    <p>1425 Los Polvorines, Provincia de Buenos Aires </br> Argentina</p>
-                                </li>
-                                <li>
-                                    <i class="fa fa-phone"></i>
-                                    <p><a href="#">+54 11 5719 9026</a><a href="#">+54 11 2359 2865</a></p>
-                                </li>
-                                <li>
-                                    <i class="fa fa-globe"></i>
-                                    <p><a href="#">OrigamiTeam@origami.com</a><a href="#">www.origami.com</a></p>
-                                </li>
-                            </ul>
-                        </div>
+            <div class="containerpurchase" >
+                <h2 class="purchaseok">
+                    ¡Gracias por tu compra!
+                    <img class="purchaseImg" src="assets/images/Nena.png" alt="">
+                </h2>
+                <h3 class="followus" >Seguinos en instagram <a href="https://www.instagram.com/origami.anime/">@origami.anime</a> </h3>
+                <button class="pdf" v-on:click="pdfGenerate()" > Generar factura</button>
+            </div>
 
-                        <div class="contact-form-wrap col-md-6 col-12 mb-40" data-aos="zoom-in-left">
-                            <h3>Deja un mensaje</h3>
-                            <form id="contact-form" @submit.prevent>
-                                <div class="contact-form">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-12 mb-30"><input type="text" name="con_name"
-                                                placeholder="Naruto Uzumaki" v-model="nombreMsj"></div>
-                                        <div class="col-lg-6 col-12 mb-30"><input type="email" name="con_email"
-                                                placeholder="naruto@******.com" v-model="emailMsj"></div>
-                                        <div class="col-12 mb-30"><textarea name="con_message" placeholder="Message"
-                                                v-model="cuerpoMsj"></textarea></div>
-                                        <div class="col-12"><input type="submit" value="enviar" @click="mensajeEnviado">
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Page Section End -->
+
+
 
             <!-- Footer Top Section Start -->
             <div class="footer-top-section section section-padding">
@@ -282,12 +238,12 @@
     <script src="assets/js/plugins.js"></script>
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/index.js"></script>
+    <script src="assets/js/purchaseok.js"></script>
     <!-- Modernizer JS -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
-    </script>
+    </script> 
 
 </body>
 

@@ -21,21 +21,21 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
 
-                .antMatchers("/api/products").permitAll()
-                .antMatchers("/api/products/clothes").permitAll()
-                .antMatchers("/api/products/cosplay").permitAll()
-                .antMatchers("/api/products/{id}").permitAll()
-                .antMatchers("/api/clients/current").hasAuthority("CLIENT")
-                .antMatchers("/api/invoicesdto").hasAuthority("CLIENT")
-
+            .antMatchers("/api/products").permitAll()
+            .antMatchers("/api/products/clothes").permitAll()
+            .antMatchers("/api/products/cosplay").permitAll()
+            .antMatchers("/api/products/{id}").permitAll()
+            .antMatchers("/api/clients/current").hasAuthority("CLIENT")
+            .antMatchers("/api/invoicesdto").hasAuthority("CLIENT")
             .antMatchers(HttpMethod.PATCH, "/api/products/status", "/api/products/stock").hasAuthority("ADMIN")
-           .antMatchers(HttpMethod.POST, "/api/products/cosplay", "/api/products/clothes").hasAuthority("ADMIN")
+            .antMatchers(HttpMethod.POST, "/api/products/cosplay", "/api/products/clothes").hasAuthority("ADMIN")
             .antMatchers("/web/manager/**").hasAuthority("ADMIN")
             .antMatchers(HttpMethod.POST, "/api/invoices/create").hasAuthority("CLIENT")
             .antMatchers(HttpMethod.PATCH, "/api/products").hasAuthority("CLIENT")
             .antMatchers("/api/invoices/createPDF", "/web/checkout.html").hasAuthority("CLIENT")
+            .antMatchers(HttpMethod.POST, "/api/clients").permitAll()
             .antMatchers("/web/**", "/web/styles/**", "/web/sources/**", "/web/assets/**").permitAll()
-                        .antMatchers("/**").hasAuthority("ADMIN");
+            .antMatchers("/**").hasAuthority("ADMIN");
 //           .antMatchers(HttpMethod.PATCH, "/api/**").permitAll()
   //         .antMatchers(HttpMethod.POST, "/api/**").permitAll()
     //       .antMatchers("/api/**", "/**").permitAll()

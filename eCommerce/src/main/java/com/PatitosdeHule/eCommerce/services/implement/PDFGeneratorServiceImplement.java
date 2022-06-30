@@ -21,6 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.*;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 
 import static java.time.format.DateTimeFormatter.ISO_LOCAL_DATE;
 
@@ -41,8 +42,8 @@ public class PDFGeneratorServiceImplement implements PDFGeneratorService {
            LocalDateTime invoice_d = invoice.getDate();
            PaymentMethods pay_method = invoice.getPaymentMethods();
            ShippingType ship = invoice.getShippingType();
-
            Set<ProductList> articles = invoice.getArticles();
+            AtomicReference<Double> total_value = new AtomicReference<>(0d);
 
            Document document = new Document (PageSize.A4);
 
@@ -163,8 +164,30 @@ public class PDFGeneratorServiceImplement implements PDFGeneratorService {
                  table.addCell(c4);
                  table.addCell(c5);
                  table.addCell(c6);
+
+                 total_value.updateAndGet(v -> new Double((double) (v + p.getAmount_perProduct() * p.getProduct_quantity())));
              });
 
+            PdfPCell c7 = new PdfPCell(new Phrase("Precio total"));
+             c7.setHorizontalAlignment(Element.ALIGN_CENTER);
+             c7.setVerticalAlignment(Element.ALIGN_MIDDLE);
+             c7.setPaddingBottom(5f);
+             c7.setPaddingTop(5f);
+             c7.setColspan(4);
+             table.addCell(c7);
+
+             PdfPCell c8 = new PdfPCell(new Phrase("$" + total_value));
+             c8.setHorizontalAlignment(Element.ALIGN_CENTER);
+             c8.setVerticalAlignment(Element.ALIGN_MIDDLE);
+             c8.setPaddingBottom(5f);
+             c8.setPaddingTop(5f);
+             c8.setColspan(4);
+             table.addCell(c8);
+
+            Image image_QR = Image.getInstance("src/main/resources/static/web/assets/images/QR_pdf.png");
+            image_QR.scaleAbsoluteHeight(120f);
+            image_QR.scaleAbsoluteWidth(110f);
+            image_QR.setAbsolutePosition(450,40);
 
             document.add(image);
             document.add(title);
@@ -175,6 +198,7 @@ public class PDFGeneratorServiceImplement implements PDFGeneratorService {
             document.add(pay_meth);
             document.add(ship_type);
             document.add(table);
+            document.add(image_QR);
             document.close();
 
         }

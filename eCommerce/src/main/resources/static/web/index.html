@@ -68,7 +68,7 @@
 							<!-- Header Top Left Start -->
 							<div class="header-top-left">
 								<p>Bienvenido a Origami</p>
-								</i>
+								
 							</div><!-- Header Top Left End -->
 						</div>
 
@@ -167,6 +167,21 @@
 			<!-- Hero Slider Start -->
 			<div class="hero-slider hero-slider-three fix">
 
+
+				<div class="hero-item" style="background-image: url(./assets/images/vanSinlogo.png)">
+					<div class="container">
+
+						<!-- Hero Content -->
+						<div class="hero-content-2">
+							<h1 class="txtShadow">Bienvenidos a Origami!</h1>
+							<h1 class="txtShadow"> Envíos a todo el país!</h1>
+							<a href="./shop.html">SHOP NOW</a>
+
+						</div>
+
+					</div>
+				</div><!-- Hero Item End -->
+
 				<!-- Hero Item Start -->
 				<div class="hero-item" style="background-image: url(assets/images/carousel.png)">
 					<div class="container">
@@ -185,20 +200,7 @@
 				</div><!-- Hero Item End -->
 
 				<!-- Hero Item Start -->
-				<div class="hero-item" style="background-image: url(./assets/images/vanSinlogo.png)">
-					<div class="container">
-
-						<!-- Hero Content -->
-						<div class="hero-content-2">
-							<h1 class="txtShadow">Bienvenidos a Origami!</h1>
-							<h1 class="txtShadow"> Envíos a todo el país!</h1>
-							<a href="./shop.html">SHOP NOW</a>
-
-						</div>
-
-					</div>
-				</div><!-- Hero Item End -->
-
+				
 			</div><!-- Hero Slider End -->
 
 		</div><!-- Hero Section End -->
@@ -236,12 +238,12 @@
 
 												<div class="content-left">
 
-													<h4 class="title"><a
+													<h4 class="title marginBoxR"><a
 															v-bind:href=`single-product.html?id=${product.id}`>{{product.name}}</a>
 													</h4>
 
 													<div class="ratting">
-														<p>{{product.animeTheme}}</p>
+														<p class="marginBoxR">{{product.animeTheme}}</p>
 													</div>
 
 													<h5 class="size">Size:
@@ -276,7 +278,7 @@
 												</div>
 
 												<div class="content-right">
-													<span class="price">${{product.price}}</span>
+													<span class="price marginBoxL">${{product.price}}</span>
 													<div class="lowStock parpadea" v-if="product.stock <= 3">
 														Bajo stock
 													</div>
@@ -329,10 +331,10 @@
 									</div>
 									<div class="content">
 										<div class="content-left">
-											<h4 class="title"><a v-bind:href=`single-product.html?id=${product.id}`>
+											<h4 class="title marginBoxR"><a v-bind:href=`single-product.html?id=${product.id}`>
 													{{product.name}}</a></h4>
 											<div class="ratting">
-												<p>{{product.animeTheme}}</p>
+												<p class="marginBoxR">{{product.animeTheme}}</p>
 											</div>
 											<h5 class="size">Size:
 												<span v-for="size in product.size">{{size.toLocaleString()}}</span>
@@ -363,7 +365,7 @@
 											</h5>
 										</div>
 										<div class="content-right">
-											<span class="price">${{product.price}}</span>
+											<span class="price marginBoxL">${{product.price}}</span>
 										</div>
 									</div>
 								</div>
@@ -494,13 +496,12 @@
 				</div>
 			</div>
 		</div><!-- Brand Section End -->
-
 		<!-- Footer Top Section Start -->
 		<div class="footer-top-section section section-padding">
 			<div class="container">
-				<div class="row">
+				<div class="d-flex justify-content-around">
 
-					<div class="footer-widget col-lg-3 col-md-6 col-12 mb-40 ">
+					<div class="footer-widget col-lg-3 col-md-6 col-12 mb-40">
 						<h4 class="title">CONTACTO</h4>
 						<p class="text-light">1425 Los Polvorines <br /> Provincia de Buenos Aires</p>
 						<p> <a class="text-light" href="tel:2995451326">2995451326</a><a class="text-light"
@@ -556,7 +557,6 @@
 		<!-- Footer Bottom Section End -->
 
 	</div>
-
 	<!-- JS
 ============================================ -->
 

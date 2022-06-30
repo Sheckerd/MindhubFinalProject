@@ -74,7 +74,7 @@ public class ECommerceApplication {
             Product sailorMercury = new Product("Sailor Mercury set", "Traje Sailor Mercury, incluye uniforme, guantes y collar", "https://i.imgur.com/6gxseN5.jpg", "Sailor Moon", false, ProductType.COSPLAY,List.of("S","M","L"), 6, 1000d);
             productService.saveProduct(sailorMercury);
 
-            Product sailorVenus = new Product("Sailor Venus set", "Traje Sailor Venus, incluye guantes, uniforme y collar", "https://i.imgur.com/u61IwJh.png", "Sailor Moon", false, ProductType.COSPLAY, List.of("S","M","L"), 14, 1000d);
+            Product sailorVenus = new Product("Sailor Venus set", "Traje Sailor Venus, incluye guantes, uniforme y collar", "https://i.imgur.com/opS6RMt.png", "Sailor Moon", false, ProductType.COSPLAY, List.of("S","M","L"), 14, 1000d);
             productService.saveProduct(sailorVenus);
 
             Product sailorMars = new Product("Sailor Mars set", "Traje Sailor Mars, incluye guantes, uniforme y collar", "https://i.imgur.com/pyEAxAI.png", "Sailor Moon", false, ProductType.COSPLAY,List.of("S","M","L"), 19, 1000d);
@@ -109,16 +109,16 @@ public class ECommerceApplication {
             Product bulma = new Product("Bulma set", "Traje de Bulma, incluye vestido, zapatillas, guantes y riñonera", "https://i.imgur.com/YkTlCWb.png", "Dragon Ball", false, ProductType.COSPLAY,List.of("S","M","L"), 16, 1200d);
             productService.saveProduct(bulma);
 
-            Product gokuSSJ = new Product("goku set", "Goku Dragon Ball Super, incluye traje de cuerpo completo, cinto, botas y muñequeras", "https://i.imgur.com/XNJMLEB.jpg", "Dragon Ball", false, ProductType.COSPLAY,List.of("S","M","L"), 14, 1000d);
+            Product gokuSSJ = new Product("goku set", "Goku Dragon Ball Super, incluye traje de cuerpo completo, cinto, botas y muñequeras", "https://i.imgur.com/IuxmPVO.png", "Dragon Ball", false, ProductType.COSPLAY,List.of("S","M","L"), 14, 1000d);
             productService.saveProduct(gokuSSJ);
 
             Product Milk = new Product("Milk set", "Traje de Milk (Chichi), incluye vestido", "https://i.imgur.com/Hxr7Vix.png", "Dragon Ball", false, ProductType.COSPLAY,List.of("S","M","L"), 10, 800d);
             productService.saveProduct(Milk);
 
-            Product gohanSJJ = new Product("Gohan set", "Traje de Gohan Super Saiyajin 1, incluye traje de cuerpo completo, cinturón y capa con hombreras", "https://i.imgur.com/yQitXnm.jpg", "Dragon Ball", false, ProductType.COSPLAY, List.of("S","M","L"), 15, 1300d);
+            Product gohanSJJ = new Product("Gohan set", "Traje de Gohan, incluye traje de cuerpo completo, cinturón y capa con hombreras", "https://i.imgur.com/qfyUL9M.png", "Dragon Ball", false, ProductType.COSPLAY, List.of("S","M","L"), 15, 1300d);
             productService.saveProduct(gohanSJJ);
 
-            Product trunks = new Product("Trunks set", "Traje de Trunks, incluye remera, pantalón, conto, chaqueta y portador de espadas", "https://i.imgur.com/JJ3lzx5.jpg", "Dragon Ball", false, ProductType.COSPLAY,List.of("S","M","L"), 4, 1000d);
+            Product trunks = new Product("Trunks set", "Traje de Trunks, incluye remera, pantalón, conto, chaqueta y portador de espadas", "https://i.imgur.com/XbY5NxG.png", "Dragon Ball", false, ProductType.COSPLAY,List.of("S","M","L"), 4, 1000d);
             productService.saveProduct(trunks);
             // __________-------_______-------_______--------// <3 uwu ☆*: .｡. o(≧▽≦)o .｡.:*☆
             // Kimetsu no Yaiba
@@ -169,10 +169,10 @@ public class ECommerceApplication {
             Product asuna = new Product("Asuna set", "Traje de Asuna,inlcuye peluca, uniforme, medias 3/4 y collar", "https://i.imgur.com/6jzahmD.png", "Sword Art Online", false, ProductType.COSPLAY,List.of("S","M","L"), 19, 1700d);
             productService.saveProduct(asuna);
 
-            Product klein = new Product("Klein set", "Traje de Klein, incluye kimono, chaleco, pantalón, remera y cinto", "https://i.imgur.com/ZjWL7f8.jpg", "Sword Art Online", false, ProductType.COSPLAY,List.of("S","M","L"), 14, 1300d);
+            Product klein = new Product("Klein set", "Traje de Klein, incluye kimono, chaleco, pantalón, remera y cinto", "https://i.imgur.com/Z0ZKh3f.png", "Sword Art Online", false, ProductType.COSPLAY,List.of("S","M","L"), 14, 1300d);
             productService.saveProduct(klein);
 
-            Product yuna = new Product("Yuna set", "Traje de Yuna, incluye vestido, medias, guantes y accesorios para el cabello", "https://i.imgur.com/ru2r6nh.png", "Sword Art Online", false, ProductType.COSPLAY,List.of("S","M","L"), 9, 1700d);
+            Product yuna = new Product("Yuna set", "Traje de Yuna, incluye vestido, medias, guantes y accesorios para el cabello", "https://i.imgur.com/eeG78mT.png", "Sword Art Online", false, ProductType.COSPLAY,List.of("S","M","L"), 9, 1700d);
             productService.saveProduct(yuna);
 
             Product sinon = new Product("Sinon set", "Traje de Sinon, incluye chaqueta, remera, pantalón y arnés", "https://i.imgur.com/ac0fkyz.png", "Sword Art Online", false, ProductType.COSPLAY,List.of("S","M","L"), 5, 1300d);
@@ -193,16 +193,16 @@ public class ECommerceApplication {
 
             // __________-------_______-------_______--------// <3 uwu ☆*: .｡. o(≧▽≦)o .｡.:*☆
             //Dororo
-            Product hyakkimaru = new Product("Hyakkimaru set", "Túnica de Hyakkimaru, incluye capa, bufanda, cinto y vendas", "https://i.imgur.com/6oWECLH.png","Dororo",false, ProductType.COSPLAY,List.of("S","M","L"), 22, 1400d);
+            Product hyakkimaru = new Product("Hyakkimaru set", "Túnica de Hyakkimaru, Dororo,incluye capa, bufanda, cinto y vendas", "https://i.imgur.com/6oWECLH.png","Dororo",false, ProductType.COSPLAY,List.of("S","M","L"), 22, 1400d);
             productService.saveProduct(hyakkimaru);
 
-            Product mio = new Product("Mio set", "Túnica de Mio","https://i.imgur.com/7818a6r.png", "Dororo",false, ProductType.COSPLAY,List.of("S","M","L"), 21, 1000d);
+            Product mio = new Product("Mio set", "Túnica de Mio, Dororo","https://i.imgur.com/KIjcGso.png", "Dororo",false, ProductType.COSPLAY,List.of("S","M","L"), 21, 1000d);
             productService.saveProduct(mio);
 
-            Product tahoumaru = new Product("Tahoumaru set", "Túnica de Tahoumaru, incluye kimono y babucha ", "https://i.imgur.com/hZK9Y4Q.jpg","Dororo",false, ProductType.COSPLAY,List.of("S","M","L"), 19, 1500d);
+            Product tahoumaru = new Product("Tahoumaru set", "Túnica de Tahoumaru, Dororo,incluye kimono y babucha ", "https://i.imgur.com/hZK9Y4Q.jpg","Dororo",false, ProductType.COSPLAY,List.of("S","M","L"), 19, 1500d);
             productService.saveProduct(tahoumaru);
 
-            Product dororo = new Product("Dororo set", "Túnica de Dororo, incluye riñonera y collar", "https://i.imgur.com/w9Kj6Ac.jpg","Dororo",false, ProductType.COSPLAY,List.of("S","M","L"), 14, 1000d);
+            Product dororo = new Product("Dororo set", "Túnica de Dororo, incluye riñonera y collar", "https://i.imgur.com/sJYpktZ.png","Dororo",false, ProductType.COSPLAY,List.of("S","M","L"), 14, 1000d);
             productService.saveProduct(dororo);
             // __________-------_______-------_______--------// <3 uwu ☆*: .｡. o(≧▽≦)o .｡.:*☆
             //Mob Psycho 100
@@ -214,16 +214,16 @@ public class ECommerceApplication {
 
             // __________-------_______-------_______--------// <3 uwu ☆*: .｡. o(≧▽≦)o .｡.:*☆
             //Evangelion
-            Product shinji = new Product("Shinji set", "Traje Shinji, incluye traje de cuerpo completo", "https://i.imgur.com/RAG4rky.jpg","Evangelion",false, ProductType.COSPLAY,List.of("S","M","L"), 24, 1000d);
+            Product shinji = new Product("Shinji set", "Traje Shinji, Evangelion, incluye traje de cuerpo completo", "https://i.imgur.com/oan8VQA.png","Evangelion",false, ProductType.COSPLAY,List.of("S","M","L"), 24, 1000d);
             productService.saveProduct(shinji);
 
-            Product asuka = new Product("Asuka set", "Traje Asukam, incluye traje de cuerpo completo", "https://i.imgur.com/VPnJbfH.jpg","Evangelion",false, ProductType.COSPLAY,List.of("S","M","L"), 30, 1000d);
+            Product asuka = new Product("Asuka set", "Traje Asukam, Evangelion, incluye traje de cuerpo completo", "https://i.imgur.com/VPnJbfH.jpg","Evangelion",false, ProductType.COSPLAY,List.of("S","M","L"), 30, 1000d);
             productService.saveProduct(asuka);
 
-            Product rei = new Product("Rei set", "Traje Rei, incluye traje de cuerpo completo", "https://i.imgur.com/NkDJMs3.jpg","Evangelion",false, ProductType.COSPLAY,List.of("S","M","L"), 14, 1000d);
+            Product rei = new Product("Rei set", "Traje Rei, Evangelion, incluye traje de cuerpo completo", "https://i.imgur.com/NkDJMs3.jpg","Evangelion",false, ProductType.COSPLAY,List.of("S","M","L"), 14, 1000d);
             productService.saveProduct(rei);
 
-            Product misato= new Product("Misato set", "Traje Misato, incluye remera, short y chaqueta", "https://i.imgur.com/wFlETGK.jpg","Evangelion",false, ProductType.COSPLAY,List.of("S","M","L"), 6, 1200d);
+            Product misato= new Product("Misato set", "Traje Misato, Evangelion, incluye remera, short y chaqueta", "https://i.imgur.com/wcPSd79.png","Evangelion",false, ProductType.COSPLAY,List.of("S","M","L"), 6, 1200d);
             productService.saveProduct(misato);
             // __________-------_______-------_______--------// <3 uwu ☆*: .｡. o(≧▽≦)o .｡.:*☆ //
             //Tokyo Ghoul
@@ -237,7 +237,7 @@ public class ECommerceApplication {
             productService.saveProduct(rize);
 
 
-            Product suzuya= new Product("Suzuya set", "Traje Suzuya, incluye tiradores, camisa, pantalón tipo pescador y polainas", "https://i.imgur.com/cCMUKP2.jpg","Tokyo Ghoul",false, ProductType.COSPLAY,List.of("S","M","L"), 19, 1400d);
+            Product suzuya= new Product("Suzuya set", "Traje Suzuya, incluye tiradores, camisa, pantalón tipo pescador y polainas", "https://i.imgur.com/O0gKVQ3.png","Tokyo Ghoul",false, ProductType.COSPLAY,List.of("S","M","L"), 19, 1400d);
             productService.saveProduct(suzuya);
             // __________-------_______-------_______--------// <3 uwu ☆*: .｡. o(≧▽≦)o .｡.:*☆
             //Spy X Family

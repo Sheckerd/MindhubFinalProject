@@ -172,7 +172,7 @@
                         <div class="col-lg-7">
                             <!-- Billing Address -->
                             <div id="billing-form" class="mb-20">
-                                <h4 class="checkout-title">Billing Address</h4>
+                                <h4 class="checkout-title">Dirección de facturación</h4>
                                 <div class="row">
                                     <div class="col-md-6 col-12 mb-5">
                                         <label>Nombre</label>
@@ -196,7 +196,7 @@
                                     </div>
                                     <div class="col-12 mb-5">
                                         <label>Dirección*</label>
-                                        <input type="text" placeholder="Address line 1" required>
+                                        <input type="text" placeholder="Agregar direccion" required>
                                     </div>
                                     <div class="col-md-6 col-12 mb-5">
                                         <label>Provincia</label>
@@ -238,15 +238,15 @@
                             <div class="row">
                                 <!-- Cart Total -->
                                 <div class="col-12 mb-40">
-                                    <h4 class="checkout-title">Cart Total</h4>
+                                    <h4 class="checkout-title">Total de compra</h4>
                                     <div class="checkout-cart-total">
-                                        <h4>Product <span>Total</span></h4>
+                                        <h4>Producto <span>Total</span></h4>
                                         <ul v-for="product in storageCarrito">
                                             <li>{{product.name}} X {{product.cantidad}} <span>$
                                                     {{product.subtotal}}</span></li>
                                         </ul>
                                         <p>Sub Total <span>$ {{subtotalCarrito}}</span></p>
-                                        <p>Shipping Fee <span>$00.00</span></p>
+                                        <p>Gastos de envío<span>$00.00</span></p>
                                         <h4>Total <span>$ {{precioTotalCarrito}}</span></h4>
                                     </div>
                                 </div>
@@ -272,7 +272,7 @@
                                         </div>
                                         <div class="single-method">
                                             <input type="checkbox" id="accept_terms" @click="acceptTyC">
-                                            <label for="accept_terms">Debe aceptar los términos y condiciones para realizar la compra</label>
+                                            <label for="accept_terms">Acepta los términos y condiciones para realizar la compra</label>
                                         </div>
                                     </div>
                                 </div>

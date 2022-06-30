@@ -161,7 +161,7 @@
             <div class="container">
                 <div class="row">
                     <div class="page-banner-content col">
-                        <h1>Ropa</h1>
+                        <h1 class="txtShadow">Ropa</h1>
                     </div>
                 </div>
             </div>
@@ -190,6 +190,12 @@
                         </div>
                     </div>
                     {{searchProduct}}
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-12 mb-40" v-if="aux.length == 0">
+                        <div>
+                            <p> SIN RESULTADOS DE BÚSQUEDA</p>
+                            <p> NO SE HAN ENCONTRADO RESULTADOS PARA LA BÚSQUEDA: "{{search}}"</p>
+                        </div>
+                    </div>
                     <div class="col-xl-3 col-lg-4 col-md-6 col-12 mb-40" v-for="product in aux">
 
                         <div class="product-item">
@@ -243,7 +249,7 @@
                                         </h5>
                                     </div>
                                     <div class="content-right">
-                                        <span class="price">${{product.price}}</span>
+                                        <span class="price marginBoxL">${{product.price}}</span>
                                         <div class="lowStock parpadea" v-if="product.stock <= 3">
                                             Bajo stock
                                         </div>

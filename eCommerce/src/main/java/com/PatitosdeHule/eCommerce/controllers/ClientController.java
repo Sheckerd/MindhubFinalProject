@@ -41,11 +41,36 @@ public class ClientController {
             @RequestParam String cellPhone) {
 
 
-        if (name.isEmpty() || lastName.isEmpty() || email.isEmpty() || password.isEmpty() || cellPhone.isEmpty()) {
+        if (name.isEmpty()) {
 
-            return new ResponseEntity<>("Missing data", HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("Missing data: name is empty", HttpStatus.FORBIDDEN);
 
         }
+
+        if (lastName.isEmpty()) {
+
+                    return new ResponseEntity<>("Missing data: last name is empty", HttpStatus.FORBIDDEN);
+
+        }
+
+        if (email.isEmpty()) {
+
+                    return new ResponseEntity<>("Missing data: email is empty", HttpStatus.FORBIDDEN);
+
+        }
+
+        if (password.isEmpty()) {
+
+                    return new ResponseEntity<>("Missing data: password is empty", HttpStatus.FORBIDDEN);
+
+        }
+
+        if (cellPhone.isEmpty()) {
+
+                     return new ResponseEntity<>("Missing data: cell phone is empty", HttpStatus.FORBIDDEN);
+
+        }
+
 
         if (clientService.getClientByEmail(email) != null) {
 
@@ -53,15 +78,20 @@ public class ClientController {
 
         }
 
+        if(!email.contains("@") || !email.contains(".com")){
+
+                    return new ResponseEntity<>("The email is not valid", HttpStatus.FORBIDDEN);
+                }
+
         if (password.length() < 6) {
 
-            return new ResponseEntity<>("Error: password is to short", HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("Password to short: At least 6 characters", HttpStatus.FORBIDDEN);
 
         }
 
         if (password.length() > 15) {
 
-            return new ResponseEntity<>("Error: password is to long", HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("Password to long: cannot be longer than 15 characters", HttpStatus.FORBIDDEN);
 
         }
 

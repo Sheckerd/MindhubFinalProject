@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Origami - eCommerce Clothes shop</title>
+    <title>Origami - Tienda de ropa</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
@@ -66,7 +66,7 @@
                         <div class="col mt-10 mb-10 d-none d-md-flex">
                             <!-- Header Top Left Start -->
                             <div class="header-top-left">
-                                <p>Welcome to Origami</p>
+                                <p>Bienvenido a Origami</p>
                             </div><!-- Header Top Left End -->
                         </div>
 
@@ -77,19 +77,12 @@
                                 <li><a href="#">spa</a>
                                     <ul>
                                         <li><a href="#">english</a></li>
-                                        <li><a href="#">spanish</a></li>
-                                        <li><a href="#">france</a></li>
-                                        <li><a href="#">russian</a></li>
-                                        <li><a href="#">chinese</a></li>
                                     </ul>
                                 </li>
 
                                 <li><a href="#">$ARS</a>
                                     <ul>
-                                        <li><a href="#">pound</a></li>
                                         <li><a href="#">dollar</a></li>
-                                        <li><a href="#">euro</a></li>
-                                        <li><a href="#">yen</a></li>
                                     </ul>
                                 </li>
 
@@ -212,7 +205,7 @@
                                     <div class="description">
                                         <p>{{product.description}}</p>
                                     </div>
-                                    <span class="availability">Availability:
+                                    <span class="availability">
                                         <span v-if="product.stock > 0">En Stock: ({{product.stock}} disponibles) </span>
                                         <span v-else>Sin Stock</span>
                                     </span>
@@ -289,11 +282,11 @@
                                 </div>
                                 <div class="content">
                                     <div class="content-left">
-                                        <h4 class="title"><a
+                                        <h4 class="title marginBoxR"><a
                                                 v-bind:href=`single-product.html?id=${product.id}`>{{product.name}}</a>
                                         </h4>
                                         <div class="ratting">
-                                            <p>{{product.animeTheme}}</p>
+                                            <p class="marginBoxR">{{product.animeTheme}}</p>
                                         </div>
                                         <h5 class="size">Size:
                                             <span v-for="size in product.size">{{size}}</span>
@@ -326,7 +319,7 @@
                                     </div>
 
                                     <div class="content-right">
-                                        <span class="price">${{product.price}}</span>
+                                        <span class="price marginBoxL">${{product.price}}</span>
                                     </div>
 
                                 </div>

@@ -57,8 +57,6 @@ Vue.createApp({
 
 
         postLogin(){
-            // console.log(this.mail),
-            // console.log(this.password),
             axios.post('/api/login',`email=${this.mail}&password=${this.password}`,{headers:{'content-type':'application/x-www-form-urlencoded'}})
             .then(response => {  
                 if (response.status === 200) {
@@ -87,13 +85,15 @@ Vue.createApp({
                         }, 2000)
                     }
                 }
-                
-                // if (this.mail.includes("admin")){
-                //     window.location.href = '/web/manager/admin.html'
-                // } else {
-                //     window.location.href = '/web/checkout.html'
-                // }
-            // console.log('signed in!!!')
+        }).catch(function (error) {
+            if (error.response.status == 401) {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'error',
+                    title: "Problema al autenticarse: email o password incorrectos",
+                    showConfirmButton: true,
+                })
+            }
         })
         },
 
@@ -121,16 +121,46 @@ Vue.createApp({
                         setTimeout(function () {
                             window.location.href = "/web/checkout.html";
                         }, 2000)
-                }
-            // window.location.href = '/web/checkout.html'
-            // console.log('signed in!!!') 
+                } 
         })
         }).catch(function (error) {
-            if (error.response.data == "Missing data" && error.response.status == 403) {
+            if (error.response.data == "Missing data: name is empty" && error.response.status == 403) {
                 Swal.fire({
                     position: 'center',
                     icon: 'warning',
-                    title: 'Error al registrarse: Faltan datos',
+                    title: 'Error al registrarse: Falta ingresar el nombre',
+                    showConfirmButton: true,
+                })
+            }
+            if (error.response.data == "Missing data: last name is empty" && error.response.status == 403) {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'warning',
+                    title: 'Error al registrarse: Falta ingresar el apellido',
+                    showConfirmButton: true,
+                })
+            }
+            if (error.response.data == "Missing data: email is empty" && error.response.status == 403) {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'warning',
+                    title: 'Error al registrarse: Falta ingresar el email',
+                    showConfirmButton: true,
+                })
+            }
+            if (error.response.data == "Missing data: password is empty" && error.response.status == 403) {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'warning',
+                    title: 'Error al registrarse: Falta ingresar la contraseña',
+                    showConfirmButton: true,
+                })
+            }
+            if (error.response.data == "Missing data: cell phone is empty" && error.response.status == 403) {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'warning',
+                    title: 'Error al registrarse: Falta ingresar número de contacto',
                     showConfirmButton: true,
                 })
             }
@@ -142,7 +172,7 @@ Vue.createApp({
                     showConfirmButton: true,
                 })
             }
-            if (error.response.data == "Email already in use" && error.response.status == 403) {
+            if (error.response.data == "Name already in use" && error.response.status == 403) {
                 Swal.fire({
                     position: 'center',
                     icon: 'warning',
@@ -150,22 +180,30 @@ Vue.createApp({
                     showConfirmButton: true,
                 })
             }
-            // if (error.response.data == "Password to short: At least 6 characters" && error.response.status == 411) {
-            //     Swal.fire({
-            //         position: 'center',
-            //         icon: 'warning',
-            //         title: 'Error al registrarse: La contraseña debe tener al menor 6 caracteres',
-            //         showConfirmButton: true,
-            //     })
-            // }
-            // if (error.response.data == "Password to long: cannot be longer than 15 characters" && error.response.status == 411) {
-            //     Swal.fire({
-            //         position: 'center',
-            //         icon: 'warning',
-            //         title: 'Error al registrarse: La contraseña no puede tener mas de 15 caracteres',
-            //         showConfirmButton: true,
-            //     })
-            // }
+            if (error.response.data == "Password to short: At least 6 characters" && error.response.status == 403) {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'warning',
+                    title: 'Error al registrarse: La contraseña debe tener al menos 6 caracteres',
+                    showConfirmButton: true,
+                })
+            }
+            if (error.response.data == "Password to long: cannot be longer than 15 characters" && error.response.status == 403) {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'warning',
+                    title: 'Error al registrarse: La contraseña no puede tener mas de 15 caracteres',
+                    showConfirmButton: true,
+                })
+            }
+            if (error.response.data == "The email is not valid" && error.response.status == 403) {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'warning',
+                    title: 'Error al registrarse: El mail no es válido',
+                    showConfirmButton: true,
+                })
+            }
         })
         
         },

@@ -49,7 +49,7 @@ html, body {
 body {
   background-color: #ffffff;
   line-height: 24px;
-  font-size: 14px;
+  font-size: 16px;
   font-style: normal;
   font-weight: normal;
   visibility: visible;
@@ -196,7 +196,41 @@ ul {
 .marginBoxL {
   margin: 0 17px 0 0px;
 }
-
+.containerpurchase{
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.purchaseok {
+  font-size: 4rem;
+  padding: 2rem;
+}
+.purchaseImg {
+  height: 150px;
+}
+.followus{
+  color: var(--violetaPastel);
+  font-weight: 700;
+  font-size: 2.2rem;
+}
+.followus>a:hover {
+  color: var(--rosa);
+}
+.pdf {
+  background-color:  #9F7FB1;
+  border: 1px #9F7FB1;
+  color: white;
+  padding: 5px 10px 5px 10px;
+  border-radius: 5px;
+  margin: 1.5rem;
+  font-size: 1.1rem;
+}
+.pdf:hover {
+  background-color: #ff708a;
+}
 
 @-moz-keyframes parpadeo{  
   0% { opacity: 1.0; }
@@ -1115,6 +1149,9 @@ img.mfp-img {
         -ms-flex-pack: start;
             justify-content: flex-start;
   }
+  .header-logo img {
+    max-width: 70px;
+  }
 }
 .header-bottom .menu-center [class*=col]:last-child {
   -webkit-box-pack: center;
@@ -1302,7 +1339,7 @@ img.mfp-img {
 .main-menu nav > ul > li > a {
   display: block;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   color: #1a161e;
   line-height: 90px;
@@ -3464,7 +3501,7 @@ img.mfp-img {
 }
 .product-item .product-inner .content .content-left .title {
   margin-bottom: 10px;
-  font-size: 18px;
+  font-size: 19px;
   line-height: 24px;
   font-weight: 600;
 }

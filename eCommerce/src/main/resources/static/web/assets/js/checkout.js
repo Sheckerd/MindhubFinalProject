@@ -59,9 +59,7 @@ Vue.createApp({
     
     methods:{
 
-        makePayment(){
-            location.href="https://homebanking2.herokuapp.com/cardPayments/posnet.html";
-        },
+
 
         logOut() {
             axios.post('/api/logout').then(response => {
@@ -89,7 +87,24 @@ Vue.createApp({
             })
         },
 
+        sumatoriaCarrito(){
+            let sumatoria = []
+            this.storageCarrito.forEach(producto => {
+                sumatoria.push(producto.subtotal)
+                
+            })
+            return sumatoria.reduce((a,b) => a + b, 0) 
+        },
+
+
         hacerCompra(producto){
+
+            let suma = this.sumatoriaCarrito()
+            console.log(suma);
+
+            // console.log(this.sumatoriaCarrito);
+            // let sumatoria = this.sumatoriaCarrito()
+            // console.log(sumatoria);
 
             let createInvoice = {
                 paymentMethods: this.paymentMethods,
@@ -123,6 +138,10 @@ Vue.createApp({
                     // })
                     .then(results =>{
                         console.log("ProductList agregados");
+
+                        setTimeout(function () {
+                            window.open(`https://homebanking2.herokuapp.com/cardPayments/posnet.html?amount=${suma}`)}, 2000)
+                        
                         const eliminarProductoDelCarrito = (arrayOriginal) => {
                             let stockIndex = this.buscarProductoEnArray(producto.id, arrayOriginal);
                             arrayOriginal[stockIndex].stock += 1;
@@ -132,10 +151,6 @@ Vue.createApp({
                         this.storageCarrito.splice(this.storageCarrito.indexOf(producto), 1);
                         localStorage.setItem("cart", JSON.stringify(this.storageCarrito));
 
-                        setTimeout(function () {
-                            window.open(`https://homebanking2.herokuapp.com/cardPayments/posnet.html?amount=${producto.subtotal}`)
-                        }, 2000)
-                        
                     })
                 })
             }).then(result =>{
@@ -147,8 +162,8 @@ Vue.createApp({
                     timer: 1500
                 })
                 setTimeout(function () {
-                window.location.href = "/web/checkout.html"
-            }, 2500)
+                window.location.href = "/web/purchaseok.html"
+            }, 10000)
             })
         } if(result.isDenied){
             Swal.fire({

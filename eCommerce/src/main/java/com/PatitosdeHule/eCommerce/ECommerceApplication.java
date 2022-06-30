@@ -250,7 +250,40 @@ public class ECommerceApplication {
             Product yorFroge= new Product("Yor Froge set", "Traje Spy Yor Froge, incluye vestido y guantes", "https://i.imgur.com/OtWvoD1.jpg","SpyXFamily",false, ProductType.COSPLAY,List.of("S","M","L"), 26, 1400d);
             productService.saveProduct(yorFroge);
             // __________-------_______-------_______--------// <3 uwu ☆*: .｡. o(≧▽≦)o .｡.:*☆
+                        //LOL
+                        Product ahriKDA = new Product("Ahri KDA", "Ahri KDA, League of Legends. Incluye peluca, traje, zapatos y prensas", "https://i.imgur.com/Z9TY0MM.jpg", "League of Legends", false, ProductType.COSPLAY, List.of("S","M","L"), 17, 1800);
+                        productService.saveProduct(ahriKDA);
 
+                        Product akaliKDA = new Product("Akali KDA", "Akali KDA, League of Legends. Incluye chaqueta, top y calzas", "https://i.imgur.com/suvHkod.jpg", "League of Legends", false, ProductType.COSPLAY, List.of("S","M","L"), 15, 1200);
+                        productService.saveProduct(akaliKDA);
+
+                        Product jinx = new Product("Jinx Arcane", "Jinx Arcane, League of Legends. Incluye", "https://i.imgur.com/NYF4RlL.jpg", "League of Legends", false, ProductType.COSPLAY, List.of("S","M","L"), 25, 1200);
+                        productService.saveProduct(jinx);
+
+                        Product vi = new Product("Vi Arcane", "Vi Arcane, League of Legends. Incluye chaqueta, remrera, pantalón, cinto, peluca y botas", "https://i.imgur.com/NcU8zMn.png", "League of Legends", false, ProductType.COSPLAY, List.of("S","M","L"), 25, 1200);
+                        productService.saveProduct(vi);
+
+                        Product rakan = new Product("Rakan", "Rakan, League of Legends. Incluye traje, capa de plumas, guantes largos y sogas", "https://i.imgur.com/9qk4rfH.png", "League of Legends", false, ProductType.COSPLAY, List.of("S","M","L"), 25, 1200);
+                        productService.saveProduct(rakan);
+
+                        Product xayah = new Product("Xayah", "Xayah, League of Legends. Incluye traje, capa de plumas, capucha con accesorio y guantes", "https://i.imgur.com/9Z8ehXu.jpg", "League of Legends", false, ProductType.COSPLAY, List.of("S","M","L"), 25, 1200);
+                        productService.saveProduct(xayah);
+
+                        Product yasuo = new Product("Yasou", "Yasou, League of Legends. Incluye espada, guantes de armadura, pantalones, botas, capa, hombrera y sogas", "https://i.imgur.com/Imvo1PF.png", "League of Legends", false, ProductType.COSPLAY, List.of("S","M","L"), 25, 1200);
+                        productService.saveProduct(yasuo);
+
+                        Product qiyana = new Product("Qiyana True Damage", "Quiyana, League of Legends. Incluye traje, ", "https://i.imgur.com/6dQXvk0.png", "League of Legends", false, ProductType.COSPLAY, List.of("S","M","L"), 25, 1200);
+                        productService.saveProduct(qiyana);
+
+                        Product yona = new Product("Yona Spirit Blossom", "Yona, League of Legends. Incluye túnica y sobretodo", "https://i.imgur.com/cttwgFh.png", "League of Legends", false, ProductType.COSPLAY, List.of("S","M","L"), 25, 1200);
+                        productService.saveProduct(yona);
+
+                        Product ashe = new Product("Ashe", "Ashe, League of Legends. Incluye traje, capa, gorra y cinto", "https://i.imgur.com/ca4n3bq.png", "League of Legends", false, ProductType.COSPLAY, List.of("S","M","L"), 25, 1200);
+                        productService.saveProduct(ashe);
+
+                        Product bagre = new Product("Thamkench", "Thamkench, League of Legends. Incluye gorrito fifi", "https://i.imgur.com/VGcaYH4.png", "League of Legends", false, ProductType.COSPLAY, List.of("S","M","L"), 25, 1200);
+                        productService.saveProduct(bagre);
+   // __________-------_______-------_______--------// <3 uwu ☆*: .｡. o(≧▽≦)o .｡.:*☆
   // Clothes
 
             //remeras

@@ -5,9 +5,11 @@ Vue.createApp({
             client:[],
             subtotalCarrito: 0,
             invoices:[],
-            paymentMethods:'',
-            shippingType:'',
+            paymentMethods: 0,
+            shippingType: 0,
             checkboxChecked:'',
+            precioTotal:0,
+            
 
         }
     },
@@ -51,7 +53,6 @@ Vue.createApp({
             })
                 
             this.precioTotal = this.subtotalCarrito;   
-
 
     },
 
@@ -99,28 +100,29 @@ Vue.createApp({
                 title: '¿Desea realizar la compra?',
                 text: "Al confirmar, no podrá revertir los cambios",
                 icon: 'question',
-                showCancelButton: true,
+                showDenyButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Transferir'
+                confirmButtonText: 'Realizar compra',
+                denyButtonText: 'Cancelar'
             }).then((result) => {
                 if (result.isConfirmed) {
-            axios.post("/api/invoices/create", createInvoice)
-            .catch(function (error) {
-                this.error = error.response.data
-            })
+                axios.post("/api/invoices/create", createInvoice)
+            // .catch(function (error) {
+            //     this.error = error.response.data
+            // })
             .then(results =>{
                 console.log("factura creada");
                 this.storageCarrito.forEach(producto =>{
                     axios.patch("/api/products", {
                         "id": producto.id,
                         "quantity": producto.cantidad
-                    }).catch(function (error) {
-                        this.error = error.response.data
                     })
+                    // .catch(function (error) {
+                    //     this.error = error.response.data
+                    // })
                     .then(results =>{
                         console.log("ProductList agregados");
-                        
                         const eliminarProductoDelCarrito = (arrayOriginal) => {
                             let stockIndex = this.buscarProductoEnArray(producto.id, arrayOriginal);
                             arrayOriginal[stockIndex].stock += 1;
@@ -131,22 +133,35 @@ Vue.createApp({
                         localStorage.setItem("cart", JSON.stringify(this.storageCarrito));
 
                         setTimeout(function () {
-                            window.open(`https://homebanking2.herokuapp.com/cardPayments/posnet.html?amount=${producto.subtotal}`);                        }, 2000)
+                            window.open(`https://homebanking2.herokuapp.com/cardPayments/posnet.html?amount=${producto.subtotal}`)
+                        }, 2000)
                         
                     })
                 })
+            }).then(result =>{
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Orden de compra efectuada. Proceda al pago',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                setTimeout(function () {
+                window.location.href = "/web/checkout.html"
+            }, 2500)
             })
+        } if(result.isDenied){
+            Swal.fire({
+                position: 'center',
+                icon: 'warning',
+                title: 'Orden de compra no realizada',
+                showConfirmButton: false,
+                timer: 1000
+            })
+            setTimeout(function () {
+            window.location.href = "/web/checkout.html"
+        }, 1000)
         }
-    }).then(result =>{
-        Swal.fire({
-            title:'Compra realizada',
-            text:`Ha adquirido el producto ${producto.name} `,
-            icon:'success',
-            imageUrl: `${producto.imageURL_front}`,
-            imageWidth: 250,
-            imageHeight: 200,
-            imageAlt: `${producto.name}`
-        })
     })
     },
 
@@ -184,6 +199,11 @@ Vue.createApp({
             }
         },
 
+        shipping(){
+
+            console.log(this.shippingType);
+        }
+
 
         
     },
@@ -191,6 +211,10 @@ Vue.createApp({
 
     computed:{
 
+        precioTotalCarrito(){
+            this.precioTotal = this.subtotalCarrito;
+            return this.precioTotal   
+        }
     }
 
 }).mount('#app')

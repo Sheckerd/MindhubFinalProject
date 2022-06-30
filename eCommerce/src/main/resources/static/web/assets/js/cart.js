@@ -11,6 +11,7 @@ Vue.createApp({
             subtotalCarrito: 0,
             storageLength: 0,
             subtotal:0,
+            precioTotal:0,
 
 
 
@@ -44,8 +45,7 @@ Vue.createApp({
         this.subtotalCarrito = total;
         // console.log(this.subtotalCarrito);
         this.storageLength = this.storageCarrito.length;
-
-
+        console.log(this.subtotalCarrito);
 
 
         axios.get(`/api/products`)
@@ -58,6 +58,7 @@ Vue.createApp({
             })
 
         this.precioTotal = this.subtotalCarrito;
+        console.log(this.precioTotal);
 
     },
 
@@ -252,7 +253,10 @@ Vue.createApp({
 
     computed: {
 
-
+        precioTotalCarrito(){
+            this.precioTotal = this.subtotalCarrito;
+            return this.precioTotal   
+        }
     },
 
 

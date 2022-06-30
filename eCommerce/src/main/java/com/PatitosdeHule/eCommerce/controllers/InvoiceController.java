@@ -71,7 +71,7 @@ public class InvoiceController {
         Client client = clientService.getClientCurrent(authentication);
 
 
-        Invoice invoice = new Invoice(client, invoiceAppDTO.getPaymentMethods(), invoiceAppDTO.getShippingType(), "12345" , 0, LocalDateTime.now());
+        Invoice invoice = new Invoice(client, invoiceAppDTO.getPaymentMethods(), invoiceAppDTO.getShippingType(), getRandomNumber(1, 10000000) + "" , 0, LocalDateTime.now());
         invoiceService.saveInvoices(invoice);
         return new ResponseEntity<>("Invoice created", HttpStatus.CREATED);
 

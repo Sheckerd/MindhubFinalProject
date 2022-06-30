@@ -3,24 +3,23 @@ import java.util.ArrayList;
 import java.util.List;
 public final class Utils {
 
-   public static int getRandomNumber(int min, int max) {
+   public static String getRandomNumber(int min, int max) {
 
-            List<Integer> cont = new ArrayList<>();
+           List<String> cont = new ArrayList<>();
+           Integer numberss;
+           do {
+               numberss = (int) ((Math.random() * (max - min)) + min);
 
-            Integer numberss;
-            do {
-                numberss = (int) ((Math.random() * (max - min)) + min);
 
-                if(numberss.toString().length() < max) {
-                    for (int i = 0; i < max - numberss.toString().length(); i++) {
-                        numberss = Integer.parseInt("0" + numberss.toString());
-                        i++;
-                    }
-                }
-            } while (cont.contains(numberss));
+           } while (cont.contains(numberss));
 
-            cont.add(numberss);
-            return numberss;
-        }
+           String formatString = String.format("%%0%dd", 8);
+
+           String formattedString = String.format(formatString, numberss);
+
+           cont.add(formattedString);
+
+           return formattedString;
+   }
 
 }

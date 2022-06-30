@@ -222,13 +222,13 @@
                             <h4 class="checkout-title">Metodo de envío</h4>
                             <div class="checkout-payment-method">
                                 <div class="single-method">
-                                    <input type="radio" id="payment_check" name="shipping-method" value="0"
-                                        v-model="shippingType" required>
+                                    <input type="radio" id="payment_check" class="shipping-mode" name="shipping-method" value="0"
+                                        v-model="shippingType" required selected >
                                     <label for="payment_check">Retira en local</label>
                                 </div>
                                 <div class="single-method">
-                                    <input type="radio" id="payment_bank" name="shipping-method" value="1"
-                                        v-model="shippingType" required>
+                                    <input type="radio" id="payment_bank" class="shipping-mode" name="shipping-method" value="1"
+                                        v-model="shippingType" required selected>
                                     <label for="payment_bank">Envío a domicilio</label>
                                 </div>
                             </div>
@@ -247,7 +247,7 @@
                                         </ul>
                                         <p>Sub Total <span>$ {{subtotalCarrito}}</span></p>
                                         <p>Shipping Fee <span>$00.00</span></p>
-                                        <h4>Total <span>$ {{precioTotal}}</span></h4>
+                                        <h4>Total <span>$ {{precioTotalCarrito}}</span></h4>
                                     </div>
                                 </div>
 
@@ -257,7 +257,7 @@
                                     <div class="checkout-payment-method">
                                         <div class="single-method">
                                             <input type="radio" id="payment_credit" name="payment-method" value="0"
-                                                v-model="paymentMethods" required>
+                                                v-model="paymentMethods" required selected>
                                             <label for="payment_credit">Tarjeta de Crédito</label>
                                         </div>
                                         <div class="single-method">
@@ -272,13 +272,12 @@
                                         </div>
                                         <div class="single-method">
                                             <input type="checkbox" id="accept_terms" @click="acceptTyC">
-                                            <label for="accept_terms">I’ve read and accept the terms &
-                                                conditions</label>
+                                            <label for="accept_terms">Debe aceptar los términos y condiciones para realizar la compra</label>
                                         </div>
                                     </div>
                                 </div>
                                 <button class="place-order" :class="{'bg-secondary': !checkboxChecked}" type="button"
-                                    @click.once="hacerCompra(product)" :disabled="!checkboxChecked">Place
+                                    @click.once="hacerCompra(product)" :disabled="!checkboxChecked && shippingType== '' && paymentMethods == ''">Place
                                     order</button>
                             </div>
                         </div>

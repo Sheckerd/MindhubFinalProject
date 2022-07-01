@@ -19,7 +19,6 @@ Vue.createApp({
         logOut(){
             axios.post('/api/logout').then(response =>{
                 window.location.href = '/web/index.html'
-                console.log("DESLOGEAR")
             })
         }
 

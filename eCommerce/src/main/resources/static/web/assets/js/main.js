@@ -101,7 +101,7 @@ var heroSlider = $('.hero-slider');
 heroSlider.slick({
     arrows: true,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 9000,
     dots: true,
     pauseOnFocus: false,
     pauseOnHover: false,

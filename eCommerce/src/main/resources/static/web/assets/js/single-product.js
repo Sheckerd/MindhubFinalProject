@@ -41,12 +41,10 @@ Vue.createApp({
         axios.get("/api/products/"+ MYPARAM)
         .then(result =>{
             this.product = result.data
-            console.log(this.product)
         })
         axios.get("/api/products")
             .then(result =>{
             this.products = result.data
-            console.log(this.products);
             
         })
         
@@ -89,7 +87,6 @@ Vue.createApp({
 
 
                     let stockIndex = this.buscarProductoEnArray(producto.id, array);
-                    console.log("Posicion en stock: " + stockIndex);
                     if (productoExistente.stock != 0) {
                         productoExistente.cantidad += 1;
                         productoExistente.stock -= 1;
@@ -120,7 +117,6 @@ Vue.createApp({
             });
             this.subtotalCarrito = total;
             this.storageLength = this.storageCarrito.length;
-            // console.log("length: " + this.storageLength);
         },
 
         // AL TOCAR VACIAR CARRITO SETEAMOS EL ARRAY EN []
@@ -163,7 +159,6 @@ Vue.createApp({
     
             this.aux = this.products.filter(product => this.product.animeTheme == product.animeTheme && product.id != this.product.id)
             this.aux = this.aux.slice(0,4)
-            // console.log(this.aux)
         }
     }
 

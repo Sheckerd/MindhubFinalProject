@@ -242,7 +242,6 @@ Vue.createApp({
 
 
                     let stockIndex = this.buscarProductoEnArray(producto.id, array);
-                    console.log("Posicion en stock: " + stockIndex);
                     if (productoExistente.stock != 0) {
                         productoExistente.cantidad += 1;
                         productoExistente.stock -= 1;
@@ -272,7 +271,6 @@ Vue.createApp({
             });
             this.subtotalCarrito = total;
             this.storageLength = this.storageCarrito.length;
-            // console.log("length: " + this.storageLength);
         },
 
         // AL TOCAR VACIAR CARRITO SETEAMOS EL ARRAY EN []

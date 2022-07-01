@@ -25,7 +25,7 @@ Vue.createApp({
         // ALMACENAMOS EL ARRAY DEL CARRITO DE LA BASE DE DATOS EN MI JS
         let carrito
         carrito = JSON.parse(localStorage.getItem("cart"));
-        // console.log(carrito);
+        
         // SI NO EXISTE CAMBIAMOS EL UNDEFINED POR UN ARRAY VACIO PARA PODER TRABAJAR CON EL CARRITO
         if (!carrito) {
             this.storageCarrito = []
@@ -33,32 +33,28 @@ Vue.createApp({
         // SI EXISTE LO ALMACENAMOS EN STORAGECARRITO
         else {
             this.storageCarrito = carrito;
-            // console.log(this.storageCarrito);
+           
         }
         // ITERAMOS EL CARRITO Y DEFINIMOS LA SUMA DE LOS SUBTOTALES
         let total = 0;
         this.storageCarrito.forEach(producto => {
             total += producto.subtotal
-            // console.log(total);
+            
         });
 
         this.subtotalCarrito = total;
-        // console.log(this.subtotalCarrito);
         this.storageLength = this.storageCarrito.length;
-        console.log(this.subtotalCarrito);
 
 
         axios.get(`/api/products`)
             .then(result => {
                 this.products = result.data
-                // console.log(this.products)
-
-                //console.log(this.products[0].clothesSize)
+            
 
             })
 
         this.precioTotal = this.subtotalCarrito;
-        console.log(this.precioTotal);
+
 
     },
 
@@ -83,7 +79,7 @@ Vue.createApp({
                     let productoIndex = this.buscarProductoEnArray(producto.id, array);
                     nuevoProducto.stock -= 1;
                     nuevoProducto.subtotal = nuevoProducto.cantidad * nuevoProducto.price;
-                    console.log(nuevoProducto.subtotal);
+                  
                     // PUSHEAMOS EL NUEVO PRODUCTO AL ARRAY EN MI JS
                     this.storageCarrito.push(nuevoProducto);
                     // ACTUALIZAMOS EN LA BASE DE DATOS NUESTRO ARRAY
@@ -99,7 +95,7 @@ Vue.createApp({
 
 
                     let stockIndex = this.buscarProductoEnArray(producto.id, array);
-                    console.log("Posicion en stock: " + stockIndex);
+                  
                     if (productoExistente.stock != 0) {
                         productoExistente.cantidad += 1;
                         productoExistente.stock -= 1;
@@ -114,7 +110,6 @@ Vue.createApp({
             agregarProductoAlCarrito(this.products)
             // LE SUMAMOS LA CANTIDAD
             this.actualizarSubtotal()
-            // console.log(nuevoProducto.subtotal);
         },
 
 
@@ -145,7 +140,6 @@ Vue.createApp({
                 localStorage.setItem("cart", JSON.stringify(this.storageCarrito));
             }
             this.actualizarSubtotal()
-            // console.log(this.storageCarrito[this.storageCarrito.indexOf(nuevoProducto)].subtotal);
 
         },
 
@@ -157,7 +151,6 @@ Vue.createApp({
             });
             this.subtotalCarrito = total;
             this.storageLength = this.storageCarrito.length;
-            // console.log("length: " + this.storageLength);
         },
 
         // AL TOCAR VACIAR CARRITO SETEAMOS EL ARRAY EN []
@@ -236,14 +229,12 @@ Vue.createApp({
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
                 confirmButtonText: 'Ir a Login/Register',
-                denyButtonText: "Ya ingresé"
+                denyButtonText: "Cancelar"
             }).then((result) => {
                 if (result.isConfirmed) {
                     window.location.href = "/web/login-register.html";
                 }
-                else if(result.isDenied){
-                    window.location.href = "/web/checkout.html"
-                }
+                
             })
         },
 

@@ -32,7 +32,6 @@ Vue.createApp({
 
         this.subtotalCarrito = total;
         this.storageLength = this.storageCarrito.length;
-        console.log(this.storageCarrito);
 
         axios.get(`/api/products`)
             .then(result => {
@@ -41,13 +40,11 @@ Vue.createApp({
                 axios.get('/api/clients/current')
                 .then(results =>{
                     this.client = results.data
-                    console.log(this.client);
                 })
 
                 axios.get('/api/invoicesdto')
                 .then(results =>{
                     this.invoices = results.data
-                    console.log(this.invoices);
                 })
 
             })
@@ -100,11 +97,8 @@ Vue.createApp({
         hacerCompra(producto){
 
             let suma = this.sumatoriaCarrito()
-            console.log(suma);
 
-            // console.log(this.sumatoriaCarrito);
-            // let sumatoria = this.sumatoriaCarrito()
-            // console.log(sumatoria);
+           
 
             let createInvoice = {
                 paymentMethods: this.paymentMethods,
@@ -127,7 +121,6 @@ Vue.createApp({
             //     this.error = error.response.data
             // })
             .then(results =>{
-                console.log("factura creada");
                 this.storageCarrito.forEach(producto =>{
                     axios.patch("/api/products", {
                         "id": producto.id,
@@ -137,7 +130,6 @@ Vue.createApp({
                     //     this.error = error.response.data
                     // })
                     .then(results =>{
-                        console.log("ProductList agregados");
 
                         setTimeout(function () {
                             window.open(`https://homebanking2.herokuapp.com/cardPayments/posnet.html?amount=${suma}`)}, 2000)
@@ -193,7 +185,6 @@ Vue.createApp({
 
             const checkbox = document.querySelector("#accept_terms")
             this.checkboxChecked = checkbox.checked
-            console.log(this.checkboxChecked);
             if (this.checkboxChecked) {
                 const {
                     value: accept
@@ -216,7 +207,6 @@ Vue.createApp({
 
         shipping(){
 
-            console.log(this.shippingType);
         }
 
 

@@ -223,8 +223,7 @@ public class ECommerceApplication {
             Product rei = new Product("Rei set", "Traje Rei, Evangelion, incluye traje de cuerpo completo", "https://i.imgur.com/NkDJMs3.jpg","Evangelion",false, ProductType.COSPLAY,List.of("S","M","L"), 14, 1000d);
             productService.saveProduct(rei);
 
-            Product misato= new Product("Misato set", "Traje Misato, Evangelion, incluye remera, short y chaqueta", "https://i.imgur.com/wcPSd79.png","Evangelion",false, ProductType.COSPLAY,List.of("S","M","L"), 6, 1200d);
-            productService.saveProduct(misato);
+
             // __________-------_______-------_______--------// <3 uwu ☆*: .｡. o(≧▽≦)o .｡.:*☆ //
             //Tokyo Ghoul
             Product kaneki= new Product("Kaneki set", "Traje Kaneki, incluye máscara, buzo, calza y bermuda", "https://i.imgur.com/agk47hZ.jpg","Tokyo Ghoul",false, ProductType.COSPLAY,List.of("S","M","L"), 31, 1800d);
@@ -281,8 +280,7 @@ public class ECommerceApplication {
                         Product ashe = new Product("Ashe", "Ashe, League of Legends. Incluye traje, capa, gorra y cinto", "https://i.imgur.com/ca4n3bq.png", "League of Legends", false, ProductType.COSPLAY, List.of("S","M","L"), 25, 1200);
                         productService.saveProduct(ashe);
 
-                        Product bagre = new Product("Thamkench", "Thamkench, League of Legends. Incluye gorrito fifi", "https://i.imgur.com/VGcaYH4.png", "League of Legends", false, ProductType.COSPLAY, List.of("S","M","L"), 25, 1200);
-                        productService.saveProduct(bagre);
+
    // __________-------_______-------_______--------// <3 uwu ☆*: .｡. o(≧▽≦)o .｡.:*☆
   // Clothes
 

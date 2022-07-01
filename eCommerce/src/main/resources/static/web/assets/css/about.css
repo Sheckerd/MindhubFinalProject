@@ -1,0 +1,29 @@
+body{
+    /* background-image: url("https://media.istockphoto.com/vectors/yellow-ducks-background-vector-id1178366634"); */
+    background-image: url("../images/pato.png");
+    /* background-image: url("https://c7.alamy.com/compes/t4192a/el-pato-de-goma-sin-fisuras-de-patron-de-timbre-en-color-pastel-pato-lindo-anillo-de-natacion-con-lindo-doodle-dibujados-a-mano-elemento-de-verano-sobre-fondo-azul-t4192a.jpg"); */
+    /* background-repeat: no-repeat; */
+    background-size:cover;
+}
+
+
+#texto-presentacion {
+    /* padding: 3rem 0; */
+    margin: 3rem 0;
+}
+
+#card{
+    background-color: rgba(185, 185, 185, 0.527);
+   margin: 2rem;
+   padding: 2rem;
+}
+
+#divCard{
+    justify-content: space-evenly;
+
+}
+
+#divCard > img{
+    width: 200px;
+    height: 200px;
+}
